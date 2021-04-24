@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!--meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"!-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="assets/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="assets/onsenui/css/onsen-css-components.min.css">
+    <script src="assets/onsenui/js/onsenui.js"></script>
+    <title>RecipeApp</title>
+</head>
+
+<body>
+    <script>
+        const loadPage = (page) => {
+            document.querySelector('#menu').close();
+            document.querySelector('#navigator').bringPageTop(page, { animation: 'fade' });
+        };
+    </script>
+
+    <ons-splitter>
+        <!-- The side menu -->
+        <ons-splitter-side id="menu" collapse>
+            <ons-page>
+                <ons-list>
+                    <ons-list-item onclick="loadPage('about.html')">
+                        About
+                    </ons-list-item>
+                </ons-list>
+            </ons-page>
+        </ons-splitter-side>
+
+        <!-- Everything not in the side menu -->
+        <ons-splitter-content>
+            <ons-navigator id="navigator" page="login.html"></ons-navigator>
+        </ons-splitter-content>
+    </ons-splitter>
+
+    <script src="cordova.js"></script>
+    <script src="assets/myScripts/index.js"></script>
+</body>
+
+</html>

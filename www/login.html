@@ -1,0 +1,56 @@
+<ons-page id="login">
+    <style>
+        img.user {
+            width: 100px;
+            height: 100px;
+            margin-top: 6px;
+        }
+
+        ons-input {
+            width: 80%;
+        }
+
+        #mcard {
+            box-shadow: 3px 3px #002d56;
+            border-radius: 80px 10px;
+        }
+    </style>
+
+    <script>
+        const login = () => {
+            const username = document.querySelector('#username').value;
+            const password = document.querySelector('#password').value;
+
+            if (username === '' && password === '') {
+                // call the navigator to move to the new page
+                const navigator = document.querySelector('#navigator');
+                navigator.resetToPage('home.html');
+            } else {
+                ons.notification.alert('Wrong username/password combination');
+            }
+        };
+    </script>
+
+    <div style="margin-top: 95px; text-align: center;">
+        <img src="assets/img/signin.png" alt="Login Image" class="user">
+    </div>
+    <ons-card id="mcard">
+        <div style="text-align: center; ">
+            <p>
+                <ons-input id="username" placeholder="Username" modifier="underbar"></ons-input>
+            </p>
+
+            <p>
+                <ons-input id="password" placeholder="Password" type="password" modifier="underbar">
+                </ons-input>
+            </p>
+
+            <p>
+                <ons-button onclick="login()" style="width: 50%; font-size: 22px; background-color: #002d56;">
+                    Sign
+                    in</ons-button>
+            </p>
+        </div>
+    </ons-card>
+
+</ons-page>
