@@ -2,6 +2,8 @@
 
 <html>
 
+</html>
+
 <head>
     <meta charset="utf-8">
 
@@ -23,6 +25,7 @@
             document.querySelector('#menu').close();
             document.querySelector('#navigator').bringPageTop(page, { animation: 'fade' });
         };
+
     </script>
 
     <ons-splitter>
@@ -30,10 +33,27 @@
         <ons-splitter-side id="menu" collapse>
             <ons-page>
                 <ons-list>
-                    <ons-list-item onclick="loadPage('about.html')">
-                        About
+                    <ons-list-item onclick="loadPage('register.html')">
+                        Register
+                    </ons-list-item>
+                    <ons-list-item onclick="loadPage('favorites.html')">
+                        Favorites
+                    </ons-list-item>
+
+                    <ons-list-item onclick="loadPage('preferences.html')">
+                        Preferences
+                    </ons-list-item>
+
+                    <ons-list-item onclick="loadPage('calculator.html')">
+                        Weight conversion calculator
+                    </ons-list-item>
+
+                    <ons-list-item onclick="loadPage('login.html')">
+                        Logout
+                        <img src="assets/img/logout.png" alt="Login Image" style="width: 40px; padding-left: 20px;">
                     </ons-list-item>
                 </ons-list>
+
             </ons-page>
         </ons-splitter-side>
 
@@ -42,6 +62,31 @@
             <ons-navigator id="navigator" page="login.html"></ons-navigator>
         </ons-splitter-content>
     </ons-splitter>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBAEuIFuYzqeWO9M3kcINiRAb6mUR7r7Sc",
+            authDomain: "recipeapp-4ec61.firebaseapp.com",
+            projectId: "recipeapp-4ec61",
+            storageBucket: "recipeapp-4ec61.appspot.com",
+            messagingSenderId: "878521556988",
+            appId: "1:878521556988:web:9461491920187862a11c79"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        let cloudDB = firebase.firestore();
+    </script>
+
 
     <script src="cordova.js"></script>
     <script src="assets/myScripts/index.js"></script>

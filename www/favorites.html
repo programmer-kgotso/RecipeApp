@@ -1,26 +1,20 @@
-<ons-page id="home">
-
-    <ons-toolbar id="home-toolbar">
-        <div class="center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;">Recipe App
-        </div>
+<ons-page id="favorites">
+    <ons-toolbar>
         <div class="left">
-            <ons-toolbar-button onclick="openMenu()">
-                <ons-icon icon="md-menu"></ons-icon>
-            </ons-toolbar-button>
+            <ons-back-button></ons-back-button>
         </div>
-        <div class="right" style="width: 2px;">
-            <ons-icon icon="md-home"></ons-icon>
-            <ons-toolbar-button>-</ons-toolbar-button>
-            <ons-toolbar-button>+</ons-toolbar-button>
+        <div class="center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Favorites
         </div>
     </ons-toolbar>
+    <ons-progress-bar indeterminate></ons-progress-bar>
 
-    <script>
-        const openMenu = () => {
-            document.querySelector('#menu').open();
-        };
-    </script>
+    <p style="text-align: center; margin-top: 10px;">
+        <ons-search-input placeholder="Search" onchange="ons.notification.alert('Searched for: ' + this.value)">
+        </ons-search-input>
+    </p>
 
+    <p style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;"> List of My favorite Recipes
+    </p>
     <div style="height: 200px; padding: 1px 0 0 0;">
         <div class="card">
             <ons-list-item>
@@ -63,9 +57,8 @@
                         olives, meat, etc.) baked at a high temperature,
                         Internet</span>
                 </div>
-
+            </ons-list-item>
         </div>
 
     </div>
-
 </ons-page>

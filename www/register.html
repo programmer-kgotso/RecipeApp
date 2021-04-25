@@ -1,0 +1,79 @@
+<ons-page id="register">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Register
+        </div>
+    </ons-toolbar>
+    <ons-progress-bar indeterminate></ons-progress-bar>
+
+    <script>
+
+        const register = () => {
+            const username = document.querySelector('#username').value;
+            const surname = document.querySelector('#surname').value;
+            const email = document.querySelector('#email').value;
+            const password = document.querySelector('#password').value;
+
+            if (username === '' && surname === '' && email === '' && password === '') {
+                // call the navigator to move to the new page
+                const navigator = document.querySelector('#navigator');
+                navigator.resetToPage('login.html');
+            } else {
+                ons.notification.alert('Wrong username/password combination');
+            }
+        };
+
+        function Add_Doc_WithID() {
+            cloudDB
+                .collection('Users')
+                .doc('username')
+                .set({
+                    username: username,
+                    surname: surname,
+                    email: email,
+                    password: password,
+                })
+                .then(function () {
+                    console.log("Document written with ID, username");
+
+                    ons.notification.toast("Record Succefully Registered!", {
+                        timeout: 2000,
+                    });
+                })
+                .catch(function (error) {
+                    console.error("Error adding document", error);
+                });
+        }
+    </script>
+    <ons-card id="mcard">
+        <div style="text-align: center; ">
+            <p>
+                <ons-input id="username" placeholder="Username" modifier="underbar"></ons-input>
+            </p>
+            <p>
+                <ons-input id="surname" placeholder="Surname" modifier="underbar"></ons-input>
+            </p>
+            <p>
+                <ons-input id="email" placeholder="Email" modifier="underbar"></ons-input>
+            </p>
+
+            <p>
+                <ons-input id="password" placeholder="Password" type="password" modifier="underbar">
+                </ons-input>
+            </p>
+
+            <p>
+                <ons-button onclick="register()" style="width: 50%; font-size: 22px; background-color: #002d56;">
+                    register
+                </ons-button>
+            </p>
+            <p>already have an account.Signin
+
+            </p>
+        </div>
+
+
+    </ons-card>
+</ons-page>

@@ -1,0 +1,4118 @@
+<!DOCTYPE html>
+<html class="lang-en wf-proximanova-n6-active wf-proximanova-i6-active wf-proximanova-n4-active wf-proximanova-i4-active wf-ffenzoweb-n1-active wf-ffenzoweb-n3-active wf-ffenzoweb-n7-active wf-ffenzoweb-n6-active wf-active"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Tutorial - Onsen UI</title>
+  <meta name="description" content="Learn about Onsen UI components and common tasks while creating an app">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="Tutorial%20-%20Onsen%20UI_files/MyFontsWebfontsKit.css">
+
+  
+
+  <link rel="stylesheet" href="Tutorial%20-%20Onsen%20UI_files/main.css">
+  <link rel="stylesheet" href="Tutorial%20-%20Onsen%20UI_files/font-awesome.css">
+
+  <link rel="shortcut icon" href="https://onsen.io/icons/favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tutorial - Onsen UI">
+  <meta property="og:site_name" content="Onsen UI">
+  <meta property="og:url" content="https://onsen.io/v2/guide/tutorial.html">
+  <meta property="og:image" content="https://onsen.io/images/logo/onsen_with_text.png">
+
+  
+
+  <script type="text/javascript" async="" src="Tutorial%20-%20Onsen%20UI_files/js"></script><script async="" src="Tutorial%20-%20Onsen%20UI_files/analytics.js"></script><script defer="defer" src="Tutorial%20-%20Onsen%20UI_files/jquery.js"></script>
+
+  <script src="Tutorial%20-%20Onsen%20UI_files/bys8jdj.js"></script>
+  <style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}.tk-ff-enzo-web{font-family:"ff-enzo-web",sans-serif;}</style><style type="text/css">@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/04b81b/00000000000000003b9ad1bb/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/04b81b/00000000000000003b9ad1bb/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/04b81b/00000000000000003b9ad1bb/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;font-display:auto;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/83c55b/00000000000000003b9ad1bc/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3) format("woff2"),url(https://use.typekit.net/af/83c55b/00000000000000003b9ad1bc/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3) format("woff"),url(https://use.typekit.net/af/83c55b/00000000000000003b9ad1bc/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3) format("opentype");font-weight:600;font-style:italic;font-display:auto;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/c9cde8/00000000000000003b9ad1b9/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/c9cde8/00000000000000003b9ad1b9/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/c9cde8/00000000000000003b9ad1b9/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-display:auto;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/4ba64f/00000000000000003b9ad1ba/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/4ba64f/00000000000000003b9ad1ba/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/4ba64f/00000000000000003b9ad1ba/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-display:auto;}@font-face{font-family:ff-enzo-web;src:url(https://use.typekit.net/af/e78b89/000000000000000000015ea0/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3) format("woff2"),url(https://use.typekit.net/af/e78b89/000000000000000000015ea0/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3) format("woff"),url(https://use.typekit.net/af/e78b89/000000000000000000015ea0/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3) format("opentype");font-weight:100;font-style:normal;font-display:auto;}@font-face{font-family:ff-enzo-web;src:url(https://use.typekit.net/af/b3f702/000000000000000000015e9c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/b3f702/000000000000000000015e9c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/b3f702/000000000000000000015e9c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-display:auto;}@font-face{font-family:ff-enzo-web;src:url(https://use.typekit.net/af/d37055/000000000000000000015e9a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/d37055/000000000000000000015e9a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/d37055/000000000000000000015e9a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:ff-enzo-web;src:url(https://use.typekit.net/af/894287/000000000000000000015e9e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/894287/000000000000000000015e9e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/894287/000000000000000000015e9e/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;font-display:auto;}</style><script>try{Typekit.load({ async: false });}catch(e){}</script>
+  <script src="Tutorial%20-%20Onsen%20UI_files/popup.js"></script>
+
+  <script>
+    window.SITE_ENV = {
+      lang: 'en',
+      hasAlternatePage: false
+    };
+  </script>
+  <link rel="stylesheet" href="Tutorial%20-%20Onsen%20UI_files/docsearch.css">
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:100912,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  </script><script async="" src="Tutorial%20-%20Onsen%20UI_files/hotjar-100912.js"></script>
+<script async="" src="Tutorial%20-%20Onsen%20UI_files/modules.js" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head>
+
+<body id="" class="loaded">
+
+  <div class="header header-fixed header-small header-full-width">
+    <nav class="global-nav">
+  <div class="global-nav-inner">
+    <div class="global-nav-logo">
+      <a href="https://onsen.io/">
+        <img src="Tutorial%20-%20Onsen%20UI_files/onsenui_banner_white.svg">
+      </a>
+    </div>
+
+    <input id="toggle-menu" type="checkbox" class="global-nav-checkbox">
+
+    <ul class="global-nav-menu">
+      <li class="global-nav-menu-search">
+        <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="text" class="global-nav-search-input ds-input" id="docsearch" placeholder="Search the docs..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="search input" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: MS Shell Dlg \32 ; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre><span class="ds-dropdown-menu" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;" role="listbox" id="algolia-autocomplete-listbox-0"><div class="ds-dataset-1"></div></span></span>
+      </li>
+      <li class="global-nav-menu-item dropdown global-nav-menu-item-active">
+        <a href="https://onsen.io/v2/guide">
+          Guide
+          <span class="global-nav-menu-arrow"></span>
+        </a>
+        <div class="dropdown-container">
+          <ul class="dropdown-content">
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v2/guide">Onsen UI Overview</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v2/guide/frameworks.html">Using with Frameworks</a>
+            </li>
+            <li class="dropdown-item-2">
+              <a href="https://onsen.io/v2/guide/jquery/">jQuery</a>
+            </li>
+            <li class="dropdown-item-2">
+              <a href="https://onsen.io/v2/guide/angular1/">AngularJS 1.x</a>
+            </li>
+            <li class="dropdown-item-2">
+              <a href="https://onsen.io/v2/guide/angular2/">Angular 2+</a>
+            </li>
+            <li class="dropdown-item-2">
+              <a href="https://onsen.io/v2/guide/react/">React</a>
+            </li>
+            <li class="dropdown-item-2">
+              <a href="https://onsen.io/v2/guide/vue/">Vue.js</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v1/guide.html">Onsen UI 1.x</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="global-nav-menu-item dropdown ">
+        <a href="#">
+          API
+          <span class="global-nav-menu-arrow"></span>
+        </a>
+        <div class="dropdown-container">
+          <ul class="dropdown-content">
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v2/api/css.html">CSS Components</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v2/api/js">JavaScript (Web Components)</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v2/api/angular1">AngularJS 1.x</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v2/api/angular2">Angular 2+</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v2/api/react">React</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v2/api/vue">Vue.js</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/v1/reference/javascript.html">Onsen UI 1.x</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="global-nav-menu-item ">
+        <a href="https://onsen.io/theme-roller/">Components</a>
+      </li>
+
+      <li class="global-nav-menu-item dropdown ">
+        <a href="#">
+          Resources
+          <span class="global-nav-menu-arrow"></span>
+        </a>
+        <div class="dropdown-container">
+          <ul class="dropdown-content">
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/theme-roller/?customize">Theme Roller</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/samples">Samples</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/playground/">Playground</a>
+            </li>
+            
+            <li class="dropdown-item-1">
+              <a href="https://community.onsen.io/">Community</a>
+            </li>
+            
+            <li class="dropdown-item-1">
+              <a href="https://onsen.io/blog">Blog</a>
+            </li>
+            <li class="dropdown-item-1">
+              <a href="https://github.com/OnsenUI/awesome-onsenui">
+                Awesome Onsen UI
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <template id="recent-activities-template">
+        <li class="global-nav-menu-item dropdown global-nav-news" @mouseover="updateLastReadDate">
+          <a href="#" class="recent-activities-menu-item">
+            
+            NEWS
+            
+            <div v-show="countUnreadItems() &gt; 0" class="recent-activities-menu-item-notification">
+              {{countUnreadItems()}}
+            </div>
+          </a>
+          <div class="dropdown-container">
+            <div class="dropdown-content recent-activities">
+              <div class="recent-activities-header">
+                
+                RECENT ACTIVITIES
+                
+              </div>
+              <div class="recent-activities-items">
+                  <div v-for="(item, index) in items" :key="index" class="recent-activities-item">
+                    <div class="recent-activities-item-date">
+                      <span :title="format(item.date)" class="recent-activities-item-date-anchor">
+                        {{fromNow(item.date)}}
+                      </span>
+                    </div>
+                    <div class="recent-activities-item-content">
+                      <div class="recent-activities-item-content-title">
+                        <span v-html="item.title"></span>
+                        <span v-show="isNew(item)" class="recent-activities-item-content-title-notification">
+                          NEW
+                        </span>
+                      </div>
+                      <div class="recent-activities-item-content-description" v-html="item.description">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </li>
+      </template>
+      <li class="global-nav-menu-item dropdown global-nav-news"><a href="#" class="recent-activities-menu-item">
+            
+            NEWS
+            
+            <div class="recent-activities-menu-item-notification" style="display: none;">
+              0
+            </div></a> <div class="dropdown-container"><div class="dropdown-content recent-activities"><div class="recent-activities-header">
+                
+                RECENT ACTIVITIES
+                
+              </div> <div class="recent-activities-items"><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="May 28, 2018 5:30 AM" class="recent-activities-item-date-anchor">
+                        3 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span><a href="https://medium.com/the-web-tub/expandable-list-items-in-onsen-ui-2-10-7a42b7f7841c" target="_blank">Onsen UI 2.10 Released</a></span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description"><p>
+  Onsen UI 2.10 has been released, adding support for much-requested <strong>expandable list items</strong> (also known as accordions).
+</p>
+<p>
+  This blog post explains in detail how to use expandable list items with Onsen UI 2.10:
+</p>
+<a class="card-anchor" href="https://medium.com/the-web-tub/expandable-list-items-in-onsen-ui-2-10-7a42b7f7841c" target="_blank">
+  <div class="card" style="margin-top: 8px;">
+    <div class="card-content">
+      <div class="card-content-title" style="margin-top: 4px;">
+        Expandable list items in Onsen UI 2.10
+      </div>
+      <div class="card-content-text">
+        Expandable list items are much like regular items in an
+        Onsen UI list, except that they can be expanded to reveal
+        hidden content. They're really easy ...
+      </div>
+      <div class="card-content-source">
+        Medium
+      </div>
+    </div>
+  </div>
+</a></div></div></div><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="Jan 19, 2018 4:30 AM" class="recent-activities-item-date-anchor">
+                        3 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span><a href="https://medium.com/the-web-tub/onsen-ui-dark-theme-customization-f4780e71746e" target="_blank">New Theme Roller and Dark Theme!</a></span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description"><p>
+  A new <strong>dark theme</strong> for Onsen UI and an updated version of the online <strong>Theme Roller</strong> were released!
+</p>
+<p>
+  Check out the <a href="https://onsen.io/theme-roller"><strong>Components section</strong></a> to see it in action or read the next article for more information:
+</p>
+<a class="card-anchor" href="https://medium.com/the-web-tub/onsen-ui-dark-theme-customization-f4780e71746e" target="_blank">
+  <div class="card" style="margin-top: 8px;">
+    <div class="card-image">
+      <img src="Tutorial%20-%20Onsen%20UI_files/1uCqEJflFx60g-BlVFKmXhA.png">
+    </div>
+    <div class="card-content">
+      <div class="card-content-title">
+        Onsen UI Dark &amp; Theme Customization
+      </div>
+      <div class="card-content-text">
+        The new Onsen UI Theme Roller app is alive! Make your own theme
+        or just tweak the existing ones easily with this new online tool...
+      </div>
+      <div class="card-content-source">
+        Medium
+      </div>
+    </div>
+  </div>
+</a></div></div></div><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="Nov 30, 2017 12:30 PM" class="recent-activities-item-date-anchor">
+                        3 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span><a href="https://medium.com/the-web-tub/d2b99e594aef" target="_blank">Onsen UI 2.8 Released</a></span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description"><p>
+  The new Onsen UI 2.8 comes with some interesting changes: <span style="font-weight: 700;">bundle size reduced</span>, <span style="font-weight: 700;">self-contained components</span> and more!
+</p>
+<p>
+  All the changes explained in this article:
+</p>
+<a class="card-anchor" href="https://medium.com/the-web-tub/d2b99e594aef" target="_blank">
+  <div class="card" style="margin-top: 8px;">
+    <div class="card-image">
+      <img src="Tutorial%20-%20Onsen%20UI_files/bundle-size.png">
+    </div>
+    <div class="card-content">
+      <div class="card-content-title">
+        New in Onsen UI 2.8: App size is much smaller than before!
+      </div>
+      <div class="card-content-text">
+        The new version of Onsen UI (2.8.x) was released some days ago
+        with some interesting changes: Bundle Size 50% Down!
+        Since v2.2.0 we have been refactoring all...
+      </div>
+      <div class="card-content-source">
+        Medium
+      </div>
+    </div>
+  </div>
+</a></div></div></div><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="Nov 8, 2017 2:00 PM" class="recent-activities-item-date-anchor">
+                        3 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span><a href="https://medium.com/the-web-tub/f17a4c272fcd" target="_blank">Onsen UI 2.7 Released</a></span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description"><p>
+  <span style="font-weight: 700;">iPhone X is now fully supported!</span>
+  This release includes a patch for iPhone X.
+</p>
+<p>
+  This blog post explains how to enable the patch and more:
+</p>
+<a class="card-anchor" href="https://medium.com/the-web-tub/f17a4c272fcd" target="_blank">
+  <div class="card" style="margin-top: 8px;">
+    <div class="card-content">
+      <div class="card-content-title" style="margin-top: 4px;">
+        Supporting iPhone X for mobile web &amp; Cordova app using Onsen UI
+      </div>
+      <div class="card-content-text">
+        iPhone X is the latest model of Apple’s iPhone series unveiled
+        in September 2017. This unique &amp; eloquent handset will be sold
+        worldwide from November 3rd. At the first glance you will notice...
+      </div>
+      <div class="card-content-source">
+        Medium
+      </div>
+    </div>
+  </div>
+</a></div></div></div><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="Oct 5, 2017 4:00 PM" class="recent-activities-item-date-anchor">
+                        4 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span><a href="https://medium.com/the-web-tub/4c7d0e5171f0" target="_blank">We are on Medium!</a></span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description"><p>
+  We launched
+  <a href="https://medium.com/the-web-tub" target="_blank">The Web Tub</a>,
+  a new publication on Medium.
+  This is our first article about Onsen UI.
+</p>
+<a class="card-anchor" href="https://medium.com/the-web-tub/4c7d0e5171f0" target="_blank">
+  <div class="card" style="margin-top: 8px;">
+    <div class="card-content">
+      <div class="card-content-title" style="margin-top: 4px;">
+        Improve UX with Swiping Tab Bar Using Onsen UI for Vue
+      </div>
+      <div class="card-content-text">
+        A swiping tab bar splits the content into different pages and
+        allows the user bringing the desired page into view with his/her
+        own finger. Improve the UX of your Vue apps with this component.
+      </div>
+      <div class="card-content-source">
+        Medium
+      </div>
+    </div>
+  </div>
+</a></div></div></div><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="Sep 28, 2017 11:00 AM" class="recent-activities-item-date-anchor">
+                        4 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span><a href="https://github.com/OnsenUI/OnsenUI-dist/releases/tag/2.6.1" style="text-decoration: underline;" target="_blank">Onsen UI 2.6.1</a> Released</span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description"><p>
+  A bunch of bug fixes are included in this release. Better support for iOS 8 and Android 4.4.4.
+</p></div></div></div><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="Sep 22, 2017 12:00 PM" class="recent-activities-item-date-anchor">
+                        4 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span><a href="https://github.com/OnsenUI/OnsenUI-dist/releases/tag/2.6.0" style="text-decoration: underline;" target="_blank">Onsen UI 2.6.0</a> Released</span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description"><p>
+  Onsen UI 2.6.0 is here! It comes with an amazing swiping tabbar and a 
+new segment component. Bindings for Vue (2.2.0) and React (1.6.0) are 
+also released.
+</p>
+<p>
+  Updated <a href="https://onsenui.github.io/vue-onsenui-kitchensink/">Vue Kitchensink App</a> with the latest features. Looks awesome, check it out!
+</p>
+<p>
+  Updated <a href="https://tutorial.onsen.io/?framework=vanilla&amp;category=reference&amp;module=tabbar" target="_blank">playground tutorials</a> for tabbar and segment.
+</p></div></div></div><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="Sep 12, 2017 3:30 PM" class="recent-activities-item-date-anchor">
+                        4 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span><a href="https://tutorial.onsen.io/?framework=angular2&amp;category=reference&amp;module=page" style="text-decoration: underline;" target="_blank">Playground</a> Updated</span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description"><p>
+  Updated <a href="https://tutorial.onsen.io/?framework=angular2&amp;category=reference&amp;module=page" target="_blank">the <code>ngx-onsenui</code> examples</a>.
+</p>
+<p>
+  If you are using <code>angular2-onsenui</code>,
+  we recommend <a href="https://onsen.io/v2/guide/angular2/index.html#setup">updating it to <code>ngx-onsenui</code></a>.
+</p></div></div></div><div class="recent-activities-item"><div class="recent-activities-item-date"><span title="Sep 6, 2017 5:00 PM" class="recent-activities-item-date-anchor">
+                        4 years ago
+                      </span></div> <div class="recent-activities-item-content"><div class="recent-activities-item-content-title"><span>Website Updated</span> <span class="recent-activities-item-content-title-notification" style="display: none;">
+                          NEW
+                        </span></div> <div class="recent-activities-item-content-description">Added "Recent Activities" at the upper right corner.</div></div></div></div></div></div></li>
+    </ul>
+
+    <label for="toggle-menu" class="global-nav-toggle">
+      <img class="global-nav-toggle-open" src="Tutorial%20-%20Onsen%20UI_files/icn_menu_open.svg">
+      <img class="global-nav-toggle-close" src="Tutorial%20-%20Onsen%20UI_files/icn_menu_close.svg">
+    </label>
+  </div>
+</nav>
+
+  </div>
+
+  <div class="container">
+    
+    <aside class="content-info content-info-page">
+      
+
+
+
+
+
+  <ul class="toc toc-1">
+    
+      
+        <li class="toc-title toc-title-no-toggle">Essentials</li>
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/installation.html#installation" class="toc-1-link toc-link">Installation</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/installation.html#onsen-ui-cdn" class="toc-2-link toc-link">Onsen UI CDN</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/installation.html#install-with-npm" class="toc-2-link toc-link">Install with NPM</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/installation.html#command-line-tool-to-package-for-mobile-apps-monaca-cli" class="toc-2-link toc-link">Command line tool to package for mobile apps - Monaca CLI</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/installation.html#old-releases-and-changelogs" class="toc-2-link toc-link">Old Releases &amp; Changelogs</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/index.html#getting-started" class="toc-1-link toc-link">Getting Started</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/index.html#what-is-onsen-ui" class="toc-2-link toc-link">What is Onsen UI?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/index.html#the-first-onsen-ui-app" class="toc-2-link toc-link">The First Onsen UI App</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/index.html#making-your-web-and-hybrid-app-feel-native" class="toc-2-link toc-link">Making Your Web &amp; Hybrid App Feel Native</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/index.html#useful-resources" class="toc-2-link toc-link">Useful Resources</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/fundamentals.html#fundamentals-onsen-ui-101" class="toc-1-link toc-link">Fundamentals</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/fundamentals.html#what-is-a-page" class="toc-2-link toc-link">What is a Page?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/fundamentals.html#managing-pages" class="toc-2-link toc-link">Managing Pages</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/fundamentals.html#the-ons-object" class="toc-2-link toc-link">The ons Object</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/fundamentals.html#attributes-properties-methods-and-events" class="toc-2-link toc-link">Attributes, Properties, Methods and Events</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item toc-item-open"><a href="https://onsen.io/v2/guide/tutorial.html#tutorial" class="toc-1-link toc-link">Tutorial</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#overview" class="toc-2-link toc-link">Overview</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#following-this-tutorial" class="toc-2-link toc-link">Following this tutorial</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#creating-a-page" class="toc-2-link toc-link">Creating a page</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#modifiers" class="toc-2-link toc-link">Modifiers</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#adding-javascript" class="toc-2-link toc-link">Adding JavaScript</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#notifications" class="toc-2-link toc-link">Notifications</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#templates" class="toc-2-link toc-link">Templates</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#navigating-pages" class="toc-2-link toc-link">Navigating pages</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#multiple-files" class="toc-2-link toc-link">Multiple files</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#toolbars" class="toc-2-link toc-link">Toolbars</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#side-menus" class="toc-2-link toc-link">Side menus</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#icons" class="toc-2-link toc-link">Icons</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#lists" class="toc-2-link toc-link">Lists</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#back-buttons" class="toc-2-link toc-link">Back buttons</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#tabs" class="toc-2-link toc-link">Tabs</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#app-structure" class="toc-2-link toc-link">App structure</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#events" class="toc-2-link toc-link">Events</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#expandable-list-items" class="toc-2-link toc-link">Expandable list items</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#compilation-process" class="toc-2-link toc-link">Compilation process</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#carousels" class="toc-2-link toc-link">Carousels</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#remote-api-calls" class="toc-2-link toc-link current">Remote API calls</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/tutorial.html#caching-data" class="toc-2-link toc-link">Caching data</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/deploy.html#deploying-your-app" class="toc-1-link toc-link">Deploying Your App</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/deploy.html#cordova-hybrid-apps" class="toc-2-link toc-link">Cordova</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/deploy.html#progressive-web-apps-pwa" class="toc-2-link toc-link">Progressive Web Apps</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/deploy.html#mobile-and-desktop-web" class="toc-2-link toc-link">Mobile &amp; Desktop Web</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#troubleshooting-and-faq" class="toc-1-link toc-link">Troubleshooting and FAQ</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#how-can-i-disable" class="toc-2-link toc-link">How can I disable …?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#how-can-i-force-specific-styles" class="toc-2-link toc-link">How can I force specific styles?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#how-can-i-use-custom-icon-packs" class="toc-2-link toc-link">How can I use custom icon packs?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#pushing-new-pages-is-slow" class="toc-2-link toc-link">Pushing new pages is slow</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#where-is-ons-scroller" class="toc-2-link toc-link">Where is ons-scroller?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#common-error-messages" class="toc-2-link toc-link">Common Error Messages</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#old-browsers" class="toc-2-link toc-link">Old Browsers</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/faq.html#headless-testing" class="toc-2-link toc-link">Headless Testing</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+        <li class="toc-title toc-title-no-toggle">Framework Support</li>
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/frameworks.html#introduction-to-bindings" class="toc-1-link toc-link">Introduction to Bindings</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/jquery/index.html#jquery" class="toc-1-link toc-link">jQuery</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/jquery/index.html#setup" class="toc-2-link toc-link">Setup</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/jquery/index.html#example-installation" class="toc-2-link toc-link">Example Installation</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/angular1/index.html#angularjs-1-x" class="toc-1-link toc-link">AngularJS 1.x</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/angular1/index.html#setup-angularjs-1-x-bindings" class="toc-2-link toc-link">Setup AngularJS 1.x bindings</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/angular1/index.html#hello-world-with-angularjs-1-x" class="toc-2-link toc-link">Hello World with AngularJS 1.x</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/angular1/index.html#migrating-to-angularjs-onsenui-package" class="toc-2-link toc-link">Migrating to angularjs-onsenui package</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/angular2/index.html#angular-2" class="toc-1-link toc-link">Angular 2+</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/angular2/index.html#setup" class="toc-2-link toc-link">Setup</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/angular2/index.html#ngx-onsenui-essentials" class="toc-2-link toc-link">ngx-onsenui Essentials</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/angular2/index.html#more-examples" class="toc-2-link toc-link">More examples</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/angular2/index.html#architecture" class="toc-2-link toc-link">Architecture</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/angular2/index.html#about-angular-2-onsenui" class="toc-2-link toc-link">About angular2-onsenui</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/react/index.html#react" class="toc-1-link toc-link">React</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/react/index.html#download-react-bindings" class="toc-2-link toc-link">Download React bindings</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/react/index.html#setup-react-bindings" class="toc-2-link toc-link">Setup React bindings</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/react/index.html#hello-world-with-react" class="toc-2-link toc-link">Hello World with React</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/vue/index.html#vue-js" class="toc-1-link toc-link">Vue.js</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/vue/index.html#setting-up-a-new-project" class="toc-2-link toc-link">Setting up a new project</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/vue/index.html#installation" class="toc-2-link toc-link">Installation</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/vue/index.html#setup" class="toc-2-link toc-link">Setup</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/vue/index.html#hello-world-app" class="toc-2-link toc-link">Hello World App</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/vue/index.html#advanced" class="toc-2-link toc-link">Advanced</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/vue/index.html#vue-bindings-faqs" class="toc-2-link toc-link">Vue Bindings FAQs</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+        <li class="toc-title toc-title-no-toggle">Platform Support</li>
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/iphonex.html#iphone-x" class="toc-1-link toc-link">iPhone X</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/iphonex.html#blank-areas-on-the-screen-edges" class="toc-2-link toc-link">Blank areas on the screen edges</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/iphonex.html#enabling-support-for-iphone-x" class="toc-2-link toc-link">Enabling support for iPhone X</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+        <li class="toc-title toc-title-no-toggle">Advanced</li>
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/architecture.html#architecture" class="toc-1-link toc-link">Architecture</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/features.html#additional-features" class="toc-1-link toc-link">Additional Features</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/features.html#grid-layout" class="toc-2-link toc-link">Grid Layout</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/features.html#platform-detection" class="toc-2-link toc-link">Platform Detection</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/features.html#rotation-detection" class="toc-2-link toc-link">Rotation Detection</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/features.html#gesture-detection" class="toc-2-link toc-link">Gesture Detection</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/features.html#fastclick" class="toc-2-link toc-link">FastClick</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/compilation.html#components-compilation" class="toc-1-link toc-link">Components Compilation</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/compilation.html#page-compilation" class="toc-2-link toc-link">Page Compilation</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/compilation.html#toolbar-compilation" class="toc-2-link toc-link">Toolbar Compilation</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/compilation.html#list-item-compilation" class="toc-2-link toc-link">List Item Compilation</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/compilation.html#select-compilation" class="toc-2-link toc-link">Select Compilation</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/lifecycle.html#page-lifecycle" class="toc-1-link toc-link">Page Lifecycle</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/lifecycle.html#events" class="toc-2-link toc-link">Events</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/lifecycle.html#hooks" class="toc-2-link toc-link">Hooks</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#theme-customization" class="toc-1-link toc-link">Theme Customization</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#setup" class="toc-2-link toc-link">Setup</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#customize" class="toc-2-link toc-link">Customize</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#change-colors" class="toc-2-link toc-link">Change Colors</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#css-design-conventions" class="toc-2-link toc-link">CSS Design Conventions</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#preview-changes" class="toc-2-link toc-link">Preview Changes</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#pattern-customization" class="toc-2-link toc-link">Pattern Customization</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#add-another-theme" class="toc-2-link toc-link">Add another theme</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#modifiers" class="toc-2-link toc-link">Modifiers</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#cross-platform-styling-autostyling" class="toc-2-link toc-link">Cross Platform Styling</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/theming.html#animations" class="toc-2-link toc-link">Animations</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/appsize.html#reducing-app-size" class="toc-1-link toc-link">Reducing App Size</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/appsize.html#removing-icon-packs" class="toc-2-link toc-link">Removing icon packs</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/appsize.html#es-modules" class="toc-2-link toc-link">ES Modules</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/cordova.html#cordova-specific-features" class="toc-1-link toc-link">Cordova-specific Features</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/cordova.html#handling-deviceready-event" class="toc-2-link toc-link">Handling ‘deviceready’ event</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/cordova.html#device-back-button" class="toc-2-link toc-link">Device Back Button</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/build.html#building-onsen-ui" class="toc-1-link toc-link">Building Onsen UI</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/extend.html#extending-onsen-ui" class="toc-1-link toc-link">Extending Onsen UI</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/extend.html#overriding-custom-elements" class="toc-2-link toc-link">Overriding Custom Elements</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/extend.html#creating-framework-binding" class="toc-2-link toc-link">Creating Framework Binding</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/extend.html#page-loader-for-routing-components" class="toc-2-link toc-link">Page loader for routing components</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/extend.html#wrappers-for-content-components" class="toc-2-link toc-link">Wrappers for content components</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/extend.html#examples" class="toc-2-link toc-link">Examples</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+        <li class="toc-title toc-title-no-toggle">Progressive Web Apps</li>
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/pwa/intro.html#what-is-a-pwa" class="toc-1-link toc-link">What is a PWA?</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/intro.html#pwa-basics" class="toc-2-link toc-link">PWA Basics</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/intro.html#requirements" class="toc-2-link toc-link">Requirements</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/intro.html#platform-support" class="toc-2-link toc-link">Platform Support</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/intro.html#frequently-asked-questions" class="toc-2-link toc-link">Frequently Asked Questions</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/pwa/tutorial.html#onsen-ui-pwa-tutorial" class="toc-1-link toc-link">Onsen UI PWA Tutorial</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/tutorial.html#getting-started" class="toc-2-link toc-link">Getting Started</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/tutorial.html#service-worker" class="toc-2-link toc-link">Service Worker</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/tutorial.html#add-to-homescreen" class="toc-2-link toc-link">Add to Homescreen</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/tutorial.html#whats-next" class="toc-2-link toc-link">What’s next?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/pwa/advanced.html#advanced-pwa-usage" class="toc-1-link toc-link">Advanced PWA Usage</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/advanced.html#deploying-updates" class="toc-2-link toc-link">Deploying updates</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/advanced.html#pwa-score" class="toc-2-link toc-link">PWA Score</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/advanced.html#performance-tips" class="toc-2-link toc-link">Performance Tips</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/pwa/advanced.html#testing-on-a-device" class="toc-2-link toc-link">Testing on a device</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+        <li class="toc-title toc-title-no-toggle">Hybrid Apps</li>
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/hybrid/cordova.html#cordova" class="toc-1-link toc-link">Cordova</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/hybrid/cordova.html#basic-cordova-app" class="toc-2-link toc-link">Basic Cordova App</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/hybrid/cordova.html#adding-onsen-ui" class="toc-2-link toc-link">Adding Onsen UI</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/hybrid/cordova.html#differences-to-a-website" class="toc-2-link toc-link">Differences to a website</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/hybrid/cordova.html#advanced-cordova" class="toc-2-link toc-link">Advanced Cordova</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+        <li class="toc-title toc-title-no-toggle">Migrating</li>
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v1/from-v1-to-v2.html#migrating-from-onsen-ui-1-x" class="toc-1-link toc-link">Migrating from Onsen UI 1.x</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v1/from-v1-to-v2.html#removing-angularjs" class="toc-2-link toc-link">Removing AngularJS?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+      
+        <li class="toc-title toc-title-no-toggle">More</li>
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/monaca.html#what-is-monaca" class="toc-1-link toc-link">What is Monaca?</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-1-item toc-item"><a href="https://onsen.io/v2/guide/community.html#join-the-community" class="toc-1-link toc-link">Join the Community</a>
+        
+        
+
+
+
+
+  <ul class="toc toc-2">
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/community.html#get-support" class="toc-2-link toc-link">Get Support</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/community.html#explore-the-ecosystem" class="toc-2-link toc-link">Explore the Ecosystem</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+      
+
+      <li class="toc-2-item toc-item"><a href="https://onsen.io/v2/guide/community.html#what-you-can-do" class="toc-2-link toc-link">What You Can Do</a>
+        
+        
+
+
+
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+        
+      </li>
+
+
+    
+  </ul>
+
+
+
+
+    </aside>
+    
+
+    <div class="container-content headers-are-anchors">
+      
+        <!-- <div class="header-title">
+  <div class="header-title-container">
+    <h1 class>
+      Onsen UI Guide - Tutorial
+    </h1>
+  </div>
+</div>
+ -->
+      
+
+      
+        <a class="onsen-button improve-doc-button" target="_blank" href="https://github.com/OnsenUI/onsen.io/edit/master/src/documents_en/v2/guide/tutorial.html">
+          <i class="fa fa-pencil"></i>Improve this
+        </a>
+      
+
+      
+<a class="header-link" href="#tutorial"><h3 id="tutorial"><span>Tutorial</span></h3></a><a class="header-link" href="#overview"><h4 id="overview"><span>Overview</span></h4></a><p>This tutorial will show you how to build an app from scratch using Onsen UI. We
+will cover solutions to common tasks in app development, including:</p>
+<ul>
+<li>Navigating tabs and pages</li>
+<li>Authenticating user login</li>
+<li>Paging data from a remote API</li>
+<li>Displaying large lists efficiently</li>
+<li>Showing a swipeable gallery of images</li>
+</ul>
+<p>The app you’ll be creating displays a list of Pokémon fetched from a remote API.
+The user can save Pokémon from the list and view them in a grid display. Tapping
+a Pokémon in a grid will open a gallery of images. The user can swipe left and
+right to move through the gallery.</p>
+<a class="header-link" href="#following-this-tutorial"><h4 id="following-this-tutorial"><span>Following this tutorial</span></h4></a><p>There are a few ways you can follow along with this tutorial. Choose one of
+these options:</p>
+<a class="header-link" href="#1-monaca-cli-and-amp-debugger-recommended"><h5 id="1-monaca-cli-and-amp-debugger-recommended"><span>1. Monaca CLI &amp; Debugger (Recommended)</span></h5></a><p>Monaca CLI is a command line tool for developing mobile and web apps. It can be
+used with Monaca Debugger, a mobile app that allows you to easily run your
+project on a mobile device from your local computer. Using these tools requires
+you to sign up for a free Monaca account.</p>
+<p>Install node and npm, then run <code>npm install -g monaca</code> to install Monaca
+CLI. Run <code>monaca login</code>, then create a new project with:</p>
+<pre><code class="hljs sql"> monaca <span class="hljs-keyword">create</span> tutorial <span class="hljs-comment">--template onsenui-v2-js-minimum</span>
+</code></pre><p>To debug the project, install Monaca Debugger from the app store, then run:</p>
+<pre><code class="hljs nginx"> <span class="hljs-attribute">monaca</span> <span class="hljs-literal">debug</span>
+</code></pre><p>You can also preview your project in a web browser with <code>monaca preview</code>.</p>
+<p>For more information about Monaca CLI, see <a href="https://monaca.io/cli.html">the official
+website</a>.</p>
+<p class="blockquote">Monaca CLI is usually used for making Cordova projects. However, for the
+purposes of this tutorial Cordova doesn’t matter, so you can safely ignore it.
+Just know for now that your project will contain some Cordova configuration
+files but that we won’t be touching them.</p>
+<a class="header-link" href="#2-onsen-ui-playground"><h5 id="2-onsen-ui-playground"><span>2. Onsen UI Playground</span></h5></a><p>Onsen UI Playground is a web app that lets you run snippets of Onsen UI code
+without having to install anything. It’s great for testing out small ideas. Once
+we start using multiple files though, you’ll want to switch to a local setup
+instead.</p>
+<p>Try out Onsen UI Playground <a href="https://onsen.io/playground/">here</a>.</p>
+<a class="header-link" href="#3-cdn"><h5 id="3-cdn"><span>3. CDN</span></h5></a><p>Unpkg provides CDN support for Onsen UI’s CSS and JavaScript. Just use these CDN links:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com/onsenui/css/onsenui.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com/onsenui/css/onsen-css-components.min.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/onsenui/js/onsenui.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<a class="header-link" href="#creating-a-page"><h4 id="creating-a-page"><span>Creating a page</span></h4></a><p>Let’s create the first screen. Each screen in Onsen UI is called a “page”. The
+Onsen UI page component is called <code>ons-page</code>. Delete the contents of the
+<code>&lt;body&gt;</code> of <code>index.html</code> (leave in everything else) and replace it with the
+following:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p class="blockquote">For Monaca CLI users, you’ll find <code>index.html</code> in the <code>www</code> directory. All
+source files go in <code>www</code>.</p>
+<p>Run the app on your device or browser and you will see screen is a light gray
+color. This is the <code>ons-page</code> component.</p>
+<p class="blockquote"><code>monaca debug</code> is the Monaca CLI command to run the project on your device.
+For this you will need Monaca Debugger installed on your device (available in
+the app store). If you just want to view the app in your browser, run <code>monaca
+preview</code>.</p>
+<p>Typically, everything that you want to display in a page should go within
+<code>ons-page</code> tags. This way Onsen UI will automatically position your elements
+correctly.</p>
+<a class="header-link" href="#creating-a-login-screen"><h5 id="creating-a-login-screen"><span>Creating a login screen</span></h5></a><p>The first thing you want to show a user when they open your app is probably a
+login screen. We can create one very easily using Onsen UI’s form components.
+These form components work mostly the same way as regular HTML form elements
+such as <code>input</code>, but the Onsen UI ones will be automatically styled to match the
+device your app is running on.</p>
+<p>Within the <code>&lt;body&gt;</code> tag of <code>index.html</code>, remove the <code>&lt;ons-page&gt;&lt;/ons-page&gt;</code> and
+replace it with:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"text-align: center; margin-top: 200px"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Username"</span> <span class="hljs-attr">modifier</span>=<span class="hljs-string">"underbar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-input</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-input</span>
+      <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span>
+      <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Password"</span>
+      <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span>
+      <span class="hljs-attr">modifier</span>=<span class="hljs-string">"underbar"</span>
+    &gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ons-input</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span>&gt;</span>Sign in<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>Most of this should look familiar to you as regular HTML with some styling, but
+notice the two new Onsen UI components: <code>ons-input</code> and <code>ons-button</code>.</p>
+<p><code>ons-input</code> is an input box that can be used the same way as an HTML <code>input</code>.
+For example, we have set <code>type</code> and <code>placeholder</code> attributes just like you would
+with an HTML <code>input</code>. The same goes for <code>ons-button</code> which is the Onsen UI
+equivalent of <code>button</code>.</p>
+<a class="header-link" href="#modifiers"><h4 id="modifiers"><span>Modifiers</span></h4></a><p>Notice that we have set the <code>modifier</code> attribute of the two input boxes.
+<code>modifier</code> allows you to easily change the appearance of an Onsen UI component.
+In this case we are using the <code>underbar</code> modifier, which puts a horizontal line
+at the bottom of the input box.</p>
+<a class="header-link" href="#next-steps"><h5 id="next-steps"><span>Next steps</span></h5></a><p>Try changing the appearance of <code>ons-button</code> by setting its modifier attribute.
+Available values include <code>quiet</code> and <code>cta</code> (call to action).</p>
+<p>To see the full list of available modifiers for a component, look at the <a href="https://onsen.io/v2/api/js/">API
+pages</a>.</p>
+<p class="blockquote">Some modifiers are available for iOS but not Android, and vice-versa. Make
+sure to check how your app looks on multiple devices.</p>
+<a class="header-link" href="#adding-javascript"><h4 id="adding-javascript"><span>Adding JavaScript</span></h4></a><p>We have a pretty login form now, but when we click the button, nothing happens.
+To fix that let’s add a bit of JavaScript.</p>
+<p>Replace the contents of the <code>&lt;script&gt;</code> tag in <code>index.html</code> with this:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">const</span> login = () =&gt; {
+  <span class="hljs-keyword">const</span> username = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#username'</span>).value;
+  <span class="hljs-keyword">const</span> password = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#password'</span>).value;
+
+  <span class="hljs-keyword">if</span> (username === <span class="hljs-string">'user'</span> &amp;&amp; password === <span class="hljs-string">'pass'</span>) {
+    ons.notification.alert(<span class="hljs-string">'Correct!'</span>);
+  } <span class="hljs-keyword">else</span> {
+    ons.notification.alert(<span class="hljs-string">'Wrong username/password combination'</span>);
+  }
+}
+</code></pre>
+<p class="blockquote">This tutorial uses arrow functions instead of the <code>function</code> keyword.</p>
+<p>Then set the button to run the <code>login</code> function when it is clicked by adding the
+<code>onclick</code> attribute to the <code>ons-button</code> we already defined:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"login()"</span>&gt;</span>Sign in<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+</code></pre>
+<p>Run the app again. Enter a username and password and click ‘Submit’. An alert
+will pop up telling you whether your login was successful. (From the code, you
+can see the only username and password combination that will be accepted is
+‘user’ and ‘pass’.)</p>
+<p class="blockquote">In real life, don’t actually put your username and password in HTML because
+anyone can see what they are by looking at the page source. For the purposes
+of this tutorial though, it’s fine.</p>
+<a class="header-link" href="#notifications"><h4 id="notifications"><span>Notifications</span></h4></a><p>In plain JavaScript we would use <code>alert</code> to show an alert, but Onsen UI has its
+own notifications. There are several different notifications available, but the
+one used here is <code>ons.notification.alert</code>.</p>
+<p>Try switching <code>ons.notification.alert</code> for something different. You could try
+<code>ons.notification.toast</code> or <code>ons.notification.confirm</code>, for example.</p>
+<p>See more about the available notifications in the API pages.</p>
+<a class="header-link" href="#templates"><h4 id="templates"><span>Templates</span></h4></a><p>All well and good. But we’d like to move to a new page once the user
+successfully logs in, so let’s create a new page.</p>
+<p>Add the following to <code>index.html</code>, <em>outside</em> the <code>ons-page</code> tag but still
+<em>inside</em> the body:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home.html"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home"</span>&gt;</span>
+    Hello!
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p>This is a template for a new page. Templates aren’t loaded automatically when
+the app starts and will only be created when the page is shown.</p>
+<a class="header-link" href="#navigating-pages"><h4 id="navigating-pages"><span>Navigating pages</span></h4></a><p>To move between pages, use the <code>ons-navigator</code> component. <code>ons-navigator</code>
+provides methods for pushing and popping pages to and from the <strong>page stack</strong>.</p>
+<p>The page stack is a stack of screens that represents the order of pages in the
+app. For example, when the first page is shown, that page is the only page in
+the page stack. If you navigate to a new page, the new page is pushed on top of
+the page stack, leaving two pages total on the stack. If you go back, the second
+page is popped from the page stack and the first page is shown again.</p>
+<p><code>ons-navigator</code> wraps an initial page. This lets it know which page it should
+show at startup. Put the <code>ons-navigator</code> around the login page. The body of
+<code>index.html</code> should now be:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-navigator</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"navigator"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"text-align: center; margin-top: 200px"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Username"</span> <span class="hljs-attr">modifier</span>=<span class="hljs-string">"underbar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-input</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-input</span>
+        <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span>
+        <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Password"</span>
+        <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span>
+        <span class="hljs-attr">modifier</span>=<span class="hljs-string">"underbar"</span>
+      &gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ons-input</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"login()"</span>&gt;</span>Sign in<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-navigator</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home.html"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home"</span>&gt;</span>
+    Hello!
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p>Run the app. It looks the same as before, but now we can get the navigator to
+show the second page (the one in the template) once the user has logged in.
+Change the definition of the <code>login</code> function:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">const</span> login = () =&gt; {
+  <span class="hljs-keyword">const</span> username = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#username'</span>).value;
+  <span class="hljs-keyword">const</span> password = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#password'</span>).value;
+
+  <span class="hljs-keyword">if</span> (username === <span class="hljs-string">'user'</span> &amp;&amp; password === <span class="hljs-string">'pass'</span>) {
+    <span class="hljs-comment">// call the navigator to move to the new page</span>
+    <span class="hljs-keyword">const</span> navigator = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#navigator'</span>);
+    navigator.resetToPage(<span class="hljs-string">'home.html'</span>);
+  } <span class="hljs-keyword">else</span> {
+    ons.notification.alert(<span class="hljs-string">'Wrong username/password combination'</span>);
+  }
+}
+</code></pre>
+<p>Run the app, enter the correct username and password, and tap the login button.
+The home page will be shown.</p>
+<p class="blockquote">It’s quickly going to get annoying if we have to keep typing in the username
+and password every time we want to run the app. While you’re developing, set
+the correct username and password to empty strings to save time.</p>
+<a class="header-link" href="#resettopage"><h5 id="resettopage"><span>resetToPage</span></h5></a><p>Let’s examine the code we just added. We get a reference to the navigator and
+then call its <code>resetToPage</code> method with the argument <code>'home.html'</code>.
+<code>resetToPage</code> removes all pages from the page stack and then adds the home page
+to the stack. We want to remove the login page from the stack so that the user
+can’t accidentally go back to the login page when she is already logged in.</p>
+<p>The argument <code>home.html</code> refers to the page to reset to. The page name is the
+<code>id</code> of the <code>template</code>. By convention, templates that define pages should have
+an ID with the suffix <code>.html</code>. We’ll see why later.</p>
+<p><code>resetToPage</code> is just one of the handy methods <code>ons-navigator</code> provides. To see
+the others, look at the <a href="https://onsen.io/v2/api/js/ons-navigator.html">API page</a>.</p>
+<a class="header-link" href="#multiple-files"><h4 id="multiple-files"><span>Multiple files</span></h4></a><p><code>index.html</code> is starting to get a little big now and will soon become hard to
+maintain. To that end, we can move the home page template to its own file.</p>
+<p>Create a new file called <code>home.html</code> in the <code>www</code> directory, the copy and paste
+the <strong>body</strong> of the home page template from <code>index.html</code> (<em>not including the
+<code>template</code> tags themselves</em>).</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home"</span>&gt;</span>
+  Hello!
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>Delete the <code>&lt;template&gt;</code> tag and its contents from <code>index.html</code> and the run app.
+Everything should still work as before.</p>
+<p>This brings up an important point: Onsen UI pages can be defined either as
+templates using the <code>template</code> element, _or_ in their own file. When we call
+<code>ons-navigator.resetToPage</code> with <code>home.html</code> as the argument, the navigator
+looks in the current file for templates with <code>id="home.html"</code>, and then looks
+for files called <code>home.html</code>. This is why nothing broke when we moved the home
+page out of a template and into its own file.</p>
+<a class="header-link" href="#toolbars"><h4 id="toolbars"><span>Toolbars</span></h4></a><p>The home page could use a little more styling. Let’s add a toolbar to make it
+look better. For this we need the <code>ons-toolbar</code> component. Add it to
+<code>home.html</code>, so that <code>home.html</code> becomes:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-toolbar</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home-toolbar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"center"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-toolbar</span>&gt;</span>
+
+  Hello!
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>Here we have used <code>ons-toolbar</code> to define a toolbar. Inside it we have a <code>div</code>
+with class <code>center</code>. <code>div.center</code> describes what should go in the middle of the
+toolbar. You can also use <code>div.left</code> and <code>div.right</code> to position elements to the
+left and right of the toolbar.</p>
+<p>Run the app, log in to move to the Home page, and you should now see a toolbar
+with the text “Home” in the center.</p>
+<a class="header-link" href="#next-steps"><h5 id="next-steps"><span>Next steps</span></h5></a><p>Try adding <code>div.left</code> and <code>div.right</code> to the toolbar (in the same way as
+<code>div.center</code> has already been added). Notice how using the <code>left</code> and <code>right</code>
+classes automatically positions each <code>div</code> in the correct place.</p>
+<a class="header-link" href="#side-menus"><h4 id="side-menus"><span>Side menus</span></h4></a><p>Now we’ll see how to add a collapsible side menu. We’re going to add links to
+other pages in the side menu, so let’s create a new page. Create a new file
+<code>about.html</code> and paste this:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"about"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-toolbar</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"center"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-toolbar</span>&gt;</span>
+
+  This is the about page.
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>We’ll also need a button to open the side menu, so let’s add one to the left of
+the home page toolbar, complete with a function <code>openMenu</code> that we’ll define in
+a minute. Paste the following inside the <code>ons-toolbar</code> in <code>home.html</code> (so now
+there should be <code>div.center</code> and <code>div.left</code>):</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-toolbar-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"openMenu()"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"md-menu"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-icon</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-toolbar-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>Two new components worth mentioning here:</p>
+<p>Firstly, <code>ons-toolbar-button</code>: This component is basically the same as
+<code>ons-button</code> except that it is specifically for buttons inside a toolbar. It
+adds some extra styling to make the button fit the look of the toolbar.</p>
+<a class="header-link" href="#icons"><h4 id="icons"><span>Icons</span></h4></a><p>Secondly, <code>ons-icon</code>: Whenever you want to display an icon, use this component.
+The specific icon is defined in the <code>icon</code> attribute.</p>
+<p>There are Ionicons for iOS, Material Design icons for Android, and Font Awesome
+icons. Each type of icon has its own prefix: <code>ion-</code>, <code>md-</code>, and <code>fa-</code>,
+respectively.</p>
+<p>The simplest usage of the <code>icon</code> attribute is to define one icon for all
+platforms, such as <code>icon="md-menu"</code>. However, you probably want to display
+Ionicons on iOS devices, and Material Icons on Android devices. This is easily
+achieved with the following special syntax:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-icon</span>
+  <span class="hljs-attr">icon</span>=<span class="hljs-string">"ion-navicon, material:md-menu"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-icon</span>&gt;</span>
+</code></pre>
+<p>This tells Onsen UI to show the icon with the <code>material:</code> prefix on Android
+devices (in this case, <code>md-menu</code>), and the other icon for iOS devices (here
+<code>ion-navicon</code>). This way your app’s icons can look native on all devices.</p>
+<a class="header-link" href="#next-steps"><h5 id="next-steps"><span>Next steps</span></h5></a><p>Try some different values for the <code>icon</code> attribute and see what the result is.
+For example, you could try <code>icon="md-face"</code>.</p>
+<p>Or how about <code>icon="fa-spinner"</code>? With this one you should also try setting the
+<code>spin</code> attribute:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"fa-spinner"</span> <span class="hljs-attr">spin</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-icon</span>&gt;</span>
+</code></pre>
+<p>For more examples of <code>ons-icon</code> usage and to see the full list of available
+icons, see the <a href="https://onsen.io/v2/api/js/ons-icon.html">API page</a>.</p>
+<a class="header-link" href="#splitter"><h5 id="splitter"><span>Splitter</span></h5></a><p>Side menus are created in Onsen UI by using the <code>ons-splitter-</code> components.
+There is a parent component <code>ons-splitter</code>. It has two children:
+<code>ons-splitter-side</code>, which contains everything that should appear in the side
+menu; and <code>ons-splitter-content</code>, which defines everything <em>outside</em> the side
+menu. This means that <code>ons-splitter</code> effectively wraps the whole app.</p>
+<p>We’re about to rewrite the body of <code>index.html</code>, so first let’s move the login
+page to a new file <code>login.html</code>. Create <code>login.html</code> and paste the following in
+it:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"login"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> login = () =&gt; {
+      <span class="hljs-keyword">const</span> username = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#username'</span>).value;
+      <span class="hljs-keyword">const</span> password = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#password'</span>).value;
+
+      <span class="hljs-keyword">if</span> (username === <span class="hljs-string">''</span> &amp;&amp; password === <span class="hljs-string">''</span>) {
+        <span class="hljs-comment">// call the navigator to move to the new page</span>
+        <span class="hljs-keyword">const</span> navigator = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#navigator'</span>);
+        navigator.resetToPage(<span class="hljs-string">'home.html'</span>);
+      } <span class="hljs-keyword">else</span> {
+        ons.notification.alert(<span class="hljs-string">'Wrong username/password combination'</span>);
+      }
+    };
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"text-align: center; margin-top: 200px"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Username"</span> <span class="hljs-attr">modifier</span>=<span class="hljs-string">"underbar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-input</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-input</span>
+      <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span>
+      <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Password"</span>
+      <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span>
+      <span class="hljs-attr">modifier</span>=<span class="hljs-string">"underbar"</span>
+    &gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ons-input</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"login()"</span>&gt;</span>Sign in<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>Notice that we also copied the <code>login</code> function and put it in a <code>&lt;script&gt;</code> tag.
+Strictly speaking we could leave it in <code>index.html</code>, but it’s good practice to
+keep helper functions with the HTML they are called from. Delete the <code>login</code>
+function from <code>index.html</code>.</p>
+<p>Now delete the contents of <code>index.html</code>‘s <code>&lt;body&gt;</code> tag and replace it with:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-splitter</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- The side menu --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-splitter-side</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"menu"</span> <span class="hljs-attr">collapse</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"220px"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-splitter-side</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Everything not in the side menu --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-splitter-content</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-navigator</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"navigator"</span> <span class="hljs-attr">page</span>=<span class="hljs-string">"login.html"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-navigator</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-splitter-content</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-splitter</span>&gt;</span>
+</code></pre>
+<p>We’ve now defined the side menu, but if you open the app , you won’t see it. We
+need to add a way to open it. We don’t want to be able to open the side menu
+from the login page, but we do want to be able to open it from the home page.
+Now it’s time to define the <code>openMenu</code> function we called from the the toolbar
+button.</p>
+<p>Add this in <code>home.html</code>:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">const</span> openMenu = () =&gt; {
+    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#menu'</span>).open();
+  };
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p class="blockquote">Note that the <code>&lt;script&gt;</code> tag must go <em>inside</em> <code>ons-page</code> for files that define
+a standalone page. The navigator expects each standalone page file to contain
+only one root element, so it will break if both <code>&lt;script&gt;</code> and <code>ons-page</code> are
+defined at the top level of a file.</p>
+<p>Run the app, hit the login button, add the tap the menu icon at the top left of
+the home page. The side menu appears!</p>
+<a class="header-link" href="#lists"><h4 id="lists"><span>Lists</span></h4></a><p>But there’s nothing in it, so let’s remedy that now. We are going to put a list
+of links in the side menu, and for that we need <code>ons-list</code> and <code>ons-list-item</code>.</p>
+<p><code>ons-list</code> represents a list - it’s the Onsen UI equivalent of <code>ul</code>.</p>
+<p><code>ons-list-item</code> is a single item in a list. It is only ever used inside an
+<code>ons-list</code>. It’s the Onsen UI version of <code>li</code>. Like the toolbar, elements can be
+position to the left, right and center of <code>ons-list-item</code> with <code>div.left</code>,
+<code>div.right</code> and <code>div.center</code>. If you don’t define one of these, the list item’s
+contents are positioned in the center by default.</p>
+<p>Change the <code>ons-splitter-side</code> definition in <code>index.html</code> to:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-splitter-side</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"menu"</span> <span class="hljs-attr">collapse</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-list</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"loadPage('about.html')"</span>&gt;</span>
+        About
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-splitter-side</span>&gt;</span>
+</code></pre>
+<p>In the <code>onclick</code> attribute of the list item we just defined, we’ve called a
+function <code>loadPage</code>. We need to define it in the <code>&lt;script&gt;</code> tag of <code>index.html</code>:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">const</span> loadPage = (page) =&gt; {
+  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#menu'</span>).close();
+  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#navigator'</span>).bringPageTop(page, { animation: <span class="hljs-string">'fade'</span> });
+};
+</code></pre>
+<p>Now when the side menu is opened, it will contain a link to the About page. Tap
+the link and the About page will be loaded, then the side menu will close.</p>
+<p class="blockquote">The <code>loadPage</code> function uses <code>ons-navigator.bringPageTop</code>. This function
+pushes a page to the top of the page stack. If the page was already in the
+page stack, <code>bringPageTop</code> takes it from wherever it was and places it at the
+top. Otherwise, it creates a new instance of the page. <code>ons-navigator</code> has
+another method, <code>pushPage</code>, which creates a new instance of a page regardless
+of whether it already exists in the stack. We recommend using <code>bringPageTop</code>
+over <code>pushPage</code> to avoid the error of accidentally loading the same page
+twice, which can cause conflicts and tricky bugs.</p>
+<a class="header-link" href="#back-buttons"><h4 id="back-buttons"><span>Back buttons</span></h4></a><p>Let’s stop and see how far we’ve got:</p>
+<ol>
+<li>We can log in to the app.</li>
+<li>Once successfully logged in, the home page is shown.</li>
+<li>From the home page, we can open the side menu and navigate to the About
+page.</li>
+</ol>
+<p>Very nice, but once the user is on the About page, there’s no way to get back
+to the home page. We could add a button and hard-wire it to go to the Home page,
+but a better solution is to add a <strong>back button</strong>.</p>
+<p>The back button component is <code>ons-back-button</code>. When <code>ons-back-button</code> is
+tapped, it looks for a parent <code>ons-navigator</code>. Then it pops the top page off
+the navigator’s page stack, taking the user back to the previous page.</p>
+<p>Add this to the <code>ons-toolbar</code> in <code>about.html</code>:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-back-button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-back-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>No further work is needed; <code>ons-back-button</code> works straight out the box.</p>
+<a class="header-link" href="#next-steps"><h5 id="next-steps"><span>Next steps</span></h5></a><p>Try extending the app to display different text on the home page before and
+after the About page back button has been tapped. Hint: you should set
+<code>ons-back-button</code>‘s <code>options.callback</code> function. See the <a href="https://onsen.io/v2/api/js/ons-back-button.html">API
+page</a> for more details.</p>
+<a class="header-link" href="#tabs"><h4 id="tabs"><span>Tabs</span></h4></a><p>Along with <code>ons-navigator</code>, Onsen UI provides another component for handling
+screen navigation. This is the <code>ons-tabbar</code> component. The tabbar keeps track of
+one or more tabs. It looks just like the tabbar in a web browser.</p>
+<p>Most apps will make use of both <code>ons-navigator</code> and <code>ons-tabbar</code>. As a rule of
+thumb, the most commonly used pages should be tabs, and the less frequently
+visited pages (such as the About page) should not be.</p>
+<p>We’re next going to create a page that displays a list of Pokémon. Create a new
+file <code>pokemon.html</code> and paste the following:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pokemon"</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-list</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pokemon-list"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span>&gt;</span>bulbasaur<span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span>&gt;</span>charmander<span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span>&gt;</span>squirtle<span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span>&gt;</span>pikachu<span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span>&gt;</span>trubbish<span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>Later we’ll also add functionality to save Pokémon, so create a file
+<code>saved.html</code> for that now too:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"saved"</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Saved Pokémon go here.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>OK, now back to <code>home.html</code> for the tabbar. Remove the <code>"Hello!"</code> message and
+replace it with <code>ons-tabbar</code>. (Don’t miss the toolbar title changing from “Home”
+to “Pokémon”). <code>home.html</code> should now be:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> openMenu = () =&gt; {
+      <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#menu'</span>).open();
+    };
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-toolbar</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"home-toolbar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"center"</span>&gt;</span>Pokémon<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-toolbar-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"openMenu()"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ons-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"md-menu"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-icon</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ons-toolbar-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-toolbar</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-tabbar</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tabbar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-tab</span> <span class="hljs-attr">page</span>=<span class="hljs-string">"pokemon.html"</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Pokémon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-tab</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-tab</span> <span class="hljs-attr">page</span>=<span class="hljs-string">"saved.html"</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Saved"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-tab</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-tabbar</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>Run the app. On the home page, there is a tabbar with two tabs labelled
+“Pokémon” and “Saved”. Tap the tabs to switch the page content (i.e. the middle
+of the screen between the toolbar and the tabbar) between the two pages
+<code>pokemon.html</code> and <code>saved.html</code>.</p>
+<p>Let’s examine the tabbar markup in more detail. We defined an <code>ons-tabbar</code>
+element with two <code>ons-tab</code> child elements. The only children of an <code>ons-tabbar</code>
+should be <code>ons-tab</code> elements.</p>
+<p>Then each <code>ons-tab</code> has a <code>page</code> attribute and a <code>label</code> attribute. The <code>page</code>
+attribute specifies which page should be loaded when the tab is tapped (this is
+the same as the <code>page</code> attribute of <code>ons-navigator</code>). The <code>label</code> attribute
+specifies what text is on the tab itself. There are more <code>ons-tab</code> attributes in
+the <a href="https://onsen.io/v2/api/js/ons-tab.html">documentation</a>.</p>
+<a class="header-link" href="#next-steps"><h5 id="next-steps"><span>Next steps</span></h5></a><p>The tabs we just made are labelled with text, but they can also be icons.</p>
+<p>Try setting the <code>icon</code> attribute of <code>ons-tab</code> and see the effect. The usage is
+the same as <code>ons-icon</code>‘s <code>icon</code> attribute.</p>
+<a class="header-link" href="#app-structure"><h4 id="app-structure"><span>App structure</span></h4></a><p>We have now built an app with a fairly complicated structure. Time for a quick
+review:</p>
+<pre><code class="hljs coffeescript">At the top level, there <span class="hljs-keyword">is</span> `<span class="javascript">ons-splitter</span>`.
+ |
+ |-- The first child <span class="hljs-keyword">of</span> `<span class="javascript">ons-splitter</span>` <span class="hljs-keyword">is</span> `<span class="javascript">ons-splitter-side</span>`. Everything
+ |   defined <span class="hljs-keyword">in</span> here specifies what should be <span class="hljs-keyword">in</span> the side menu.
+ |
+ |-- The second child <span class="hljs-keyword">of</span> `<span class="javascript">ons-splitter</span>` <span class="hljs-keyword">is</span> `<span class="javascript">ons-splitter-content</span>`. Everything
+     apart from the side menu <span class="hljs-keyword">is</span> defined <span class="hljs-keyword">in</span> here.
+      |
+      |-- Within `<span class="javascript">ons-splitter-side</span>` <span class="hljs-keyword">is</span> `<span class="javascript">ons-navigator</span>`. The navigator <span class="hljs-keyword">is</span> used to
+      |   move between any pages that aren<span class="hljs-string">'t tabs.
+      |
+      |-- Within `ons-navigator` are multiple `ons-page` components. Each
+          defines a page. `home.html` is the most interesting though, because it
+          contains a _tabbar_. Each child of the tabbar is a _tab_.
+</span></code></pre><p>One common source of confusion is mixing up pages controlled by <code>ons-navigator</code>
+and tabs controlled by <code>ons-tabbar</code>. Carefully plan the structure of your app so
+you are sure what should be a tab and what should be a regular page.</p>
+<p class="blockquote">If you’re brave, it is possible to have a navigator and tabbar both handle the
+same page. However, you are likely to be thanked for your efforts by bugs that
+are tricky to fix, such as when you accidentally load a page in the DOM twice,
+giving you two elements with the same ID. In general, there are better ways
+to handle a page that is sometimes a normal page and sometimes a tab.</p>
+<a class="header-link" href="#events"><h4 id="events"><span>Events</span></h4></a><p>You may have noticed something isn’t quite right when you go to the “Saved” tab:
+The toolbar title still says “Pokémon” when it should say “Saved”. To fix this,
+we need a bit of JavaScript to dynamically change the toolbar title when the tab
+changes.</p>
+<p>When the state of an Onsen UI component changes, such as when the tabbar’s
+focused tab is change, or when the navigator loads a page, an event is fired.
+All we need to do to make use of these events is to add an event listener for
+the event we’re interested in.</p>
+<p>In this instance, we want to listen for <code>ons-tabbar</code>‘s <code>prechange</code> event. The
+<code>prechange</code> event is fired just before the tabbar moves to a tab. We add an
+event listener the same way as we would for any other JavaScript event. Append
+this inside the <code>&lt;script&gt;</code> tag of <code>home.html</code>:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'prechange'</span>, ({ target, tabItem }) =&gt; {
+  <span class="hljs-keyword">if</span> (target.matches(<span class="hljs-string">'#tabbar'</span>)) {
+    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#home-toolbar .center'</span>).innerHTML = tabItem.getAttribute(<span class="hljs-string">'label'</span>);
+  }
+});
+</code></pre>
+<p>Run the app and witness the dynamically-changing toolbar title.</p>
+<p>Now to the code:</p>
+<ol>
+<li><code>document.addEventListener</code> is called to add a listener.</li>
+<li>The first argument states we want to listen for <code>prechange</code>.</li>
+<li>The callback function receives an event object as an argument. We need the
+<code>target</code> and <code>tabItem</code> properties only.</li>
+<li>We check if the target - the element that fired the event - is the tabbar.
+This is an important step because more than one Onsen UI component can fire
+an event with the same name. You have to make sure you don’t accidentally
+handle the wrong component’s events.</li>
+<li>If it was actually the tabbar that fired <code>prechange</code>, we get the label of the
+new tab from <code>tabItem</code>‘s <code>label</code> attribute, and set that as the center text
+of the toolbar.</li>
+</ol>
+<p>In general, the pattern to add an event listener is to use
+<code>document.addEventListener</code> to listen for the event, and then use
+<code>document.querySelector</code> in the callback function to make sure the component
+that fired the event is the one you expected.</p>
+<a class="header-link" href="#next-steps"><h5 id="next-steps"><span>Next steps</span></h5></a><p>Try adding event listeners to some of the other events that are fired by Onsen
+UI components.</p>
+<p>You could try: <code>ons-tabbar</code>‘s <code>postchange</code>, which is fired <em>after</em> the tab is
+changed; or <code>ons-tabbar</code>‘s <code>reactive</code>, which is fired when the currently open
+tab is tapped again; or maybe <code>ons-navigator</code>‘s <code>prepop</code> which is fired just
+before a page is popped from the page stack.</p>
+<p>For more information on Onsen UI events and what you can do with them, check the
+<a href="https://onsen.io/v2/api/js">API documentation</a>.</p>
+<a class="header-link" href="#expandable-list-items"><h4 id="expandable-list-items"><span>Expandable list items</span></h4></a><p>We breezed over the Pokémon list page earlier so we could get on to the tabbar,
+but let’s go back to it now.</p>
+<p>So far there’s a list of Pokémon, created using <code>ons-list</code> and <code>ons-list-item</code>.
+We would like to be able to select a Pokémon from this list and save it. This is
+a job for <strong>expandable list items</strong>.</p>
+<p>An expandable list item is one that increases in size when it is tapped,
+displaying content that was initially hidden. An <code>ons-list-item</code> is turned into
+an expandable list item by adding the <code>expandable</code> attribute and adding a child
+<code>div.expandable-content</code> containing the hidden content.</p>
+<p>Make each of the existing list items expandable by replacing the existing
+<code>ons-list</code> in <code>pokemon.html</code> with:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-list</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pokemon-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span> <span class="hljs-attr">expandable</span>&gt;</span>
+    bulbasaur
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"expandable-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"savePokemon(1, this)"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span> <span class="hljs-attr">expandable</span>&gt;</span>
+    charmander
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"expandable-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"savePokemon(4, this)"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span> <span class="hljs-attr">expandable</span>&gt;</span>
+    squirtle
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"expandable-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"savePokemon(7, this)"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span> <span class="hljs-attr">expandable</span>&gt;</span>
+    pikachu
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"expandable-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"savePokemon(25, this)"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span> <span class="hljs-attr">expandable</span>&gt;</span>
+    trubbish
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"expandable-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"savePokemon(568, this)"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">ons-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-list</span>&gt;</span>
+</code></pre>
+<p class="blockquote">If it’s upsetting to see the same markup repeated five times, don’t worry
+because later on we’ll be generating all of this with JavaScript.</p>
+<p>Tap a list item now and you’ll see it expand to reveal the Save button. Tap it
+again to close.</p>
+<a class="header-link" href="#compilation-process"><h4 id="compilation-process"><span>Compilation process</span></h4></a><p>Take a look at one of the expandable list items in your browser’s developer
+tools.</p>
+<p class="blockquote">If you’re using Monaca CLI, run <code>monaca preview</code> to see the app in browser.</p>
+<p>Notice the list item contains two children, <code>div.top</code> and
+<code>div.expandable-content</code>. We know about <code>div.expandable-content</code> but where did
+<code>div.top</code> come from? The answer is that when Onsen UI compiled the list item, it
+put everything that wasn’t inside <code>div.expandable-content</code> into <code>div.top</code>.
+<code>div.top</code> represents the part of the list item that is always shown - the <em>top</em>
+of the list item.</p>
+<p><code>div.top</code> itself can have three children: <code>div.left</code>, <code>div.right</code> and
+<code>div.center</code>. Like the toolbar, these position elements to the left, right and
+center of the top part.</p>
+<p>Almost all Onsen UI components have their structured altered in some way during
+compilation. This means you can’t assume that whatever is in your HTML file is
+what will actually be rendered in the app. However, you can “preempt” the
+compiler by writing the compiler output in your HTML file to begin with. This is
+helpful whenever you want to access things that the compiler does automatically,
+such as adding a top part to an expandable list item.</p>
+<a class="header-link" href="#saving-pokemon"><h5 id="saving-pokemon"><span>Saving Pokémon</span></h5></a><p>What should happen when a user presses the Save button? Well, that’s where the
+Saved page we created earlier comes in.</p>
+<p>When a Pokémon is saved, it should be added to the Saved page. The Saved page
+will show the pictures of the saved Pokémon in a grid layout. When one of the
+pictures is tapped, the picture will fill the whole screen in a “gallery” style.
+The user can then swipe left or right to go to the previous or next saved
+Pokémon.</p>
+<p>Let’s define the <code>savePokemon</code> function in the <code>&lt;script&gt;</code> tag of <code>pokemon.html</code>:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">const</span> savePokemon = (pokenumber, button) =&gt; {
+  addPokemonToGrid(pokenumber);
+  button.parentNode.parentNode.hideExpansion();
+};
+</code></pre>
+<p><code>savePokemon</code> is called when a save button is pressed. It receives the number of
+the Pokémon we want to save (if you’re not familiar with Pokémon, each Pokémon
+has a unique number), and a reference to the particular save button that was
+pressed. <code>savePokemon</code> simply calls <code>addPokemonToGrid</code> (not yet defined) then
+closes the expandable list item.</p>
+<p>Now we need to define <code>addPokemonToGrid</code> in <code>saved.html</code>. For now let’s just
+store the Pokémon number in an array. Put this in the <code>&lt;script&gt;</code> tag of
+<code>saved.html</code>:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">let</span> savedPokemon = [];
+
+<span class="hljs-keyword">const</span> addPokemonToGrid = pokenumber =&gt; {
+  <span class="hljs-comment">// we save a list so we can pass it to the gallery</span>
+  savedPokemon.push(pokenumber);
+};
+</code></pre>
+<p>Run the app again, tap on a Pokémon in the list, and tap the Save button that
+appears. The list item will contract, and the Pokémon will be saved, although
+we can’t see that reflected in the app just yet.</p>
+<a class="header-link" href="#saving-the-pokemon-images-locally"><h5 id="saving-the-pokemon-images-locally"><span>Saving the Pokémon images locally</span></h5></a><p>We need some images of Pokémon for the app, so we’ll get some of the sprites
+from an online repository.  Getting all the sprites over the internet every time
+we want to see them is a bad idea. Some people will be using the app over a
+mobile connection and we don’t want to suck up all their data. So we download
+all the sprites once and save them as static assets in our project.</p>
+<p>Download and unzip the
+<a href="https://github.com/PokeAPI/sprites/archive/master.zip">images</a>. Then move the
+contents of <code>sprites/pokemon</code> into a new directory in the project <code>./www/img</code>.</p>
+<a class="header-link" href="#making-the-grid"><h5 id="making-the-grid"><span>Making the grid</span></h5></a><p>Now to create a grid. Actually, there is no need for special Onsen UI components
+here, so we’ll just use some regular HTML and CSS. Replace the contents of
+<code>saved.html</code> with:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"saved"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-id">#grid</span> {
+      <span class="hljs-attribute">display</span>: grid;
+      <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr;
+      <span class="hljs-attribute">grid-auto-rows</span>: <span class="hljs-number">33vw</span>;
+    }
+
+    <span class="hljs-selector-id">#grid</span> <span class="hljs-selector-tag">img</span> {
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">let</span> savedPokemon = [];
+
+    <span class="hljs-keyword">const</span> addPokemonToGrid = pokenumber =&gt; {
+      <span class="hljs-comment">// we save a list so we can pass it to the gallery</span>
+      savedPokemon.push(pokenumber);
+
+      <span class="hljs-comment">// now add the new pokemon to the grid</span>
+      <span class="hljs-keyword">const</span> grid = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#grid'</span>);
+      <span class="hljs-keyword">const</span> cell = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+      cell.onclick = () =&gt; <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#navigator'</span>)
+        .bringPageTop(<span class="hljs-string">'gallery.html'</span>, { data: { pokenumber, savedPokemon } });
+
+      <span class="hljs-keyword">const</span> image = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'img'</span>);
+      image.setAttribute(<span class="hljs-string">'src'</span>, <span class="hljs-string">`img/<span class="hljs-subst">${pokenumber}</span>.png`</span>);
+
+      cell.appendChild(image);
+      grid.appendChild(cell);
+    };
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"grid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>You can now save a Pokémon from the list and have its picture show up in the
+grid. Tapping the image takes you to the gallery view.</p>
+<a class="header-link" href="#carousels"><h4 id="carousels"><span>Carousels</span></h4></a><p>Onsen UI provides a component used for creating galleries and other swipeable
+structures: the carousel component, <code>ons-carousel</code>. A carousel displays an item
+on the screen, and then can be made to move to show the next or previous item in
+the carousel.</p>
+<p>The two components we are going to need are <code>ons-carousel</code> and
+<code>ons-carousel-item</code>. In the same vein as <code>ons-list</code> and <code>ons-list-item</code>,
+<code>ons-carousel</code> defines the carousel and all its children are defined by
+<code>ons-carousel-item</code>.</p>
+<p>Create <code>gallery.html</code> and add:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gallery"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.gallery-image</span> {
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-toolbar</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"picture-toolbar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ons-back-button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-back-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-toolbar</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-carousel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"carousel"</span> <span class="hljs-attr">fullscreen</span> <span class="hljs-attr">swipeable</span> <span class="hljs-attr">auto-scroll</span> <span class="hljs-attr">auto-scroll-ratio</span>=<span class="hljs-string">"0.1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-carousel</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>The only new thing here is the carousel. It has quite a few attributes set to
+tweak the behaviour. Let’s go over the meaning of each of these briefly:</p>
+<ul>
+<li><code>fullscreen</code>: The carousel should take up all of the available content
+space.</li>
+<li><code>swipeable</code>: The user can swipe left and right (or up and down for a
+vertical carousel). This moves to the next or previous item. The other way
+to move the carousel is by calling one of the methods that moves it.</li>
+<li><code>auto-scroll</code>: Snap to items. In other words, the carousel can’t ever stop
+moving in between items.</li>
+<li><code>auto-scroll-ratio</code>: How much the carousel needs to be moved before it will
+snap to the next item. The value can range between 0 and 1. We have it set
+pretty low here so it doesn’t take much swiping to automatically scroll.</li>
+</ul>
+<p>There are plenty more carousel attributes and methods. Take a look at its <a href="https://onsen.io/v2/api/js/ons-carousel.html">API
+page</a> for the full list.</p>
+<a class="header-link" href="#updating-and-moving-the-gallery"><h5 id="updating-and-moving-the-gallery"><span>Updating and moving the gallery</span></h5></a><p>Now for the JavaScript to make this work. Two things need to happen when the
+carousel is shown:</p>
+<ol>
+<li>The carousel needs to update its items with whatever new Pokémon have been
+saved to the grid since the last time the carousel was shown.</li>
+<li>The carousel needs to move to the correct item for the grid item that was
+tapped to show the carousel. For example, if the user taps Charizard in the
+grid, the carousel should show Charizard.</li>
+</ol>
+<p>Add this in the script tags of <code>gallery.html</code>:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'show'</span>, ({ target }) =&gt; {
+  <span class="hljs-keyword">if</span> (target.matches(<span class="hljs-string">'#gallery'</span>)) {
+    <span class="hljs-keyword">const</span> { pokenumber, savedPokemon } = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#navigator'</span>).topPage.data;
+
+    <span class="hljs-keyword">const</span> carousel = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#carousel'</span>);
+
+    <span class="hljs-comment">// figure out what new pokemon have been saved since we last showed the gallery</span>
+    <span class="hljs-comment">// this way we don't accidentally add the same pokemon twice</span>
+    <span class="hljs-keyword">const</span> sliceIndex = carousel.itemCount - savedPokemon.length;
+
+    <span class="hljs-keyword">if</span> (sliceIndex !== <span class="hljs-number">0</span>) { <span class="hljs-comment">// if there are unadded pokemon</span>
+      <span class="hljs-keyword">const</span> unaddedPokemon = savedPokemon.slice(sliceIndex);
+
+      unaddedPokemon.map(number =&gt; {
+        <span class="hljs-keyword">const</span> carouselItem = ons.createElement(<span class="hljs-string">`
+          &lt;ons-carousel-item&gt;
+            &lt;ons-card&gt;
+              &lt;img class="gallery-image" src="img/<span class="hljs-subst">${number}</span>.png" /&gt;
+            &lt;/ons-card&gt;
+          &lt;/ons-carousel-item&gt;
+        `</span>);
+
+        carousel.appendChild(carouselItem);
+      });
+    }
+
+    <span class="hljs-comment">// go to the selected pokemon</span>
+    carousel.setActiveIndex(savedPokemon.indexOf(pokenumber));
+  }
+});
+</code></pre>
+<p>Again we have an event listener on the page’s <code>show</code> event, so the callback
+function will be run every time the gallery page is shown.</p>
+<p>The grid page will pass in some data that we need to the navigator when the
+gallery page is pushed. This is accessed from <code>ons-navigator.topPage.data</code>.
+<code>data</code> is an object containing whatever was passed in from the previous page. In
+this case, the pushed data consists of the number of the Pokémon that was tapped
+in the grid, and the list of Pokémon that have been saved.</p>
+<p>The slice code figures out the difference between the Pokémon already in the
+carousel and the list of saved Pokémon we received from the grid page, and from
+that we know what Pokémon are not yet in the carousel. We add them.</p>
+<p>Then all that remains is to move the carousel to the image of the tapped
+Pokémon. <code>ons-carousel</code>‘s <code>setActiveIndex</code> function is what we need here.</p>
+<p>Run the app again and you can now swipe the gallery left and right.</p>
+<a class="header-link" href="#remote-api-calls"><h4 id="remote-api-calls"><span>Remote API calls</span></h4></a><p>Let’s go back to the list of Pokémon at <code>pokemon.html</code>. At the moment, there are
+a few Pokémon hardcoded into the list, but it would be better if our list had
+<em>all</em> Pokémon in it. All 800 or so.</p>
+<p>Luckily, there’s PokeAPI to help us out. PokeAPI is a REST API that provides
+information about everything to do with Pokémon. We’re going to call one of its
+methods to get the full list of Pokémon.</p>
+<p>The results returned from PokeAPI are paged. This means we get the first few
+results (the first 20 in this case) and URL to request the next page of results
+if we want them. That way we only get the results we need as we need them, and
+also don’t overload the PokeAPI servers.</p>
+<p>Since we’re getting the Pokémon from the server, we don’t need the hardcoded
+Pokémon currently in the list. Remove the child elements of the <code>ons-list</code> in
+<code>pokemon.html</code> so that the list looks like:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-list</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pokemon-list"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-list</span>&gt;</span>
+</code></pre>
+<p>Making the request to the API doesn’t involve anything special or specific to
+Onsen UI, so there won’t be much in the way of explanation. Add this to
+<code>pokemon.html</code> in the <code>&lt;script&gt;</code> tag, appending to what’s already there:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">let</span> url = <span class="hljs-string">'https://pokeapi.co/api/v2/pokemon'</span>;
+<span class="hljs-keyword">let</span> nextPokenumber = <span class="hljs-number">1</span>; <span class="hljs-comment">// use to keep track of the Pokémon numbers</span>
+
+<span class="hljs-keyword">const</span> get = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-comment">// do the API call and get JSON response</span>
+  <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> fetch(url);
+  <span class="hljs-keyword">const</span> json = <span class="hljs-keyword">await</span> response.json();
+
+  <span class="hljs-keyword">const</span> newPokemon = json.results.map(e =&gt; e.name);
+
+  <span class="hljs-keyword">const</span> list = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#pokemon-list'</span>);
+  newPokemon.forEach(name =&gt; {
+    list.appendChild(ons.createElement(<span class="hljs-string">`
+      &lt;ons-list-item expandable&gt;
+        <span class="hljs-subst">${nextPokenumber}</span> <span class="hljs-subst">${name}</span>
+        &lt;div class="expandable-content"&gt;
+          &lt;ons-button onclick="savePokemon(<span class="hljs-subst">${nextPokenumber}</span>, this)"&gt;Save&lt;/ons-button&gt;
+        &lt;/div&gt;
+      &lt;/ons-list-item&gt;
+    `</span>));
+    nextPokenumber++;
+  });
+
+  url = json.next;
+};
+</code></pre>
+<p>Briefly, the <code>get</code> function calls the PokeAPI to get a page of results. The
+response contains the next lot of Pokémon, which we append to the list. It also
+contains the URL to get the next page of results, which we save to <code>url</code>. The
+next time <code>get</code> is called, it will use the URL we just got.</p>
+<p>One interesting function here is <code>ons.createElement</code>. <code>ons.createElement</code> is a
+handy way to make elements dynamically if you want to add them to the DOM using
+JavaScript. It takes a string representation of the element you want to create
+and interprets it. See the docs for more information.</p>
+<a class="header-link" href="#loading-the-pokemon-as-we-need-them"><h5 id="loading-the-pokemon-as-we-need-them"><span>Loading the Pokémon as we need them</span></h5></a><p>We could keep calling <code>get</code> until we have all the Pokémon and add them to the
+list all at once, but that is wasteful because the user may never scroll all the
+way through the list. Instead we should only call <code>get</code> when the user has seen
+as much of the list as is currently loaded. Let’s wrap some of the code in an
+<code>init</code> event listener callback, and add some code to call the API as we need it.
+The <code>&lt;script&gt;</code> tag of <code>pokemon.html</code> should now contain exactly:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">const</span> savePokemon = (pokenumber, button) =&gt; {
+  addPokemonToGrid(pokenumber);
+  button.parentNode.parentNode.hideExpansion();
+};
+
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'init'</span>, ({ target }) =&gt; {
+  <span class="hljs-keyword">if</span> (target.matches(<span class="hljs-string">'#pokemon'</span>)) {
+
+    <span class="hljs-keyword">let</span> url = <span class="hljs-string">'https://pokeapi.co/api/v2/pokemon'</span>;
+    <span class="hljs-keyword">let</span> nextPokenumber = <span class="hljs-number">1</span>; <span class="hljs-comment">// use to keep track of the Pokémon numbers</span>
+
+    <span class="hljs-keyword">const</span> get = <span class="hljs-keyword">async</span> () =&gt; {
+      <span class="hljs-comment">// do the API call and get JSON response</span>
+      <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> fetch(url);
+      <span class="hljs-keyword">const</span> json = <span class="hljs-keyword">await</span> response.json();
+
+      <span class="hljs-keyword">const</span> newPokemon = json.results.map(e =&gt; e.name);
+
+      <span class="hljs-keyword">const</span> list = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#pokemon-list'</span>);
+      newPokemon.forEach(name =&gt; {
+        list.appendChild(ons.createElement(<span class="hljs-string">`
+          &lt;ons-list-item expandable&gt;
+            <span class="hljs-subst">${nextPokenumber}</span> <span class="hljs-subst">${name}</span>
+            &lt;div class="expandable-content"&gt;
+              &lt;ons-button onclick="savePokemon(<span class="hljs-subst">${nextPokenumber}</span>, this)"&gt;Save&lt;/ons-button&gt;
+            &lt;/div&gt;
+          &lt;/ons-list-item&gt;
+        `</span>));
+        nextPokenumber++;
+      });
+
+      url = json.next;
+
+      <span class="hljs-comment">// hide the spinner when all the pages have been loaded</span>
+      <span class="hljs-keyword">if</span> (!url) {
+        <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#after-list'</span>).style.display = <span class="hljs-string">'none'</span>;
+      }
+    };
+
+    <span class="hljs-comment">// get the first set of results as soon as the page is initialised</span>
+    get();
+
+    <span class="hljs-comment">// at the bottom of the list get the next set of results and append them</span>
+    target.onInfiniteScroll = (done) =&gt; {
+      <span class="hljs-keyword">if</span> (url) {
+        setTimeout(() =&gt; {
+          get();
+          done();
+        }, <span class="hljs-number">200</span>);
+      }
+    };
+  }
+});
+</code></pre>
+<p>Here we add a listener for the <code>init</code> event that is fired when a page is
+initialised. If the page initialised was the Pokémon list page, we call <code>get</code> to
+get the first 20 Pokémon and add them to the list. Then we set the page’s
+<code>infiniteScroll</code> property. The callback function of <code>infiniteScroll</code> is called
+when we reach the end of the page’s content (defined by <code>div.content</code> which
+we’ll add in a minute). We need to use <code>setTimeout</code> because otherwise the
+results could get spliced, I think.</p>
+<p class="blockquote"><code>setTimeout</code> waits for 200ms here just so you can see the spinner in action.
+This is just an arbitrary wait, so feel free to set it to <code>0</code> to speed things
+up. However, what you <em>can’t</em> do is remove <code>setTimeout</code> altogether and just
+call <code>get</code>. This will splice the results as mentioned already.</p>
+<p>We’ll also add a spinner so that when the user reaches the end of the page, a
+spinner is shown while the next results are being loaded. Add this to the body
+of <code>pokemon.html</code> after the <code>ons-list</code> definition:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"after-list"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin: 20px; text-align: center;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"fa-spinner"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"26px"</span> <span class="hljs-attr">spin</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-icon</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>Run the app and have a look at the list again. First we see that some Pokémon
+have been loaded in the list from the start. Scroll to the bottom of the list
+and you should briefly see the spinner to indicate that the next results are
+loading. Then the API call will finish and the next results will be added to the
+list. Scroll to the bottom and repeat until we run out of results.</p>
+<a class="header-link" href="#caching-data"><h4 id="caching-data"><span>Caching data</span></h4></a><p class="blockquote">The code in this section will be explained piece by piece, without showing you
+where to add it in the existing code. However, the full code is shown at the
+end of the section so you can easily copy it into your <code>pokemon.html</code> file. If
+you just want to speed through this section, skip to end for the full code
+listing.</p>
+<p>As the outstandingly moral people that we are, we should really cache the
+results of the API calls so we don’t put unnecessary strain on PokeAPI.
+Currently when the app is closed, the whole Pokémon list is lost and we have to
+get all the data all over again next time we open the app.</p>
+<p>We can use local storage to store the Pokémon.</p>
+<p class="blockquote">Local storage is good for storing a few strings here and there. It will work
+for our purposes but for anything serious, you should look into a proper
+caching solution.</p>
+<p>First off we’ll define a couple of constants that will help us store the Pokémon
+in the right place. These will be used to create the keys in local storage:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-comment">// local storage keys</span>
+<span class="hljs-keyword">const</span> URL = <span class="hljs-string">'pokemon__url'</span>;
+<span class="hljs-keyword">const</span> PREFIX = <span class="hljs-string">'pokemon__'</span>;
+</code></pre>
+<p>Instead of saving the next URL in the <code>url</code> variable, we’ll now store it in
+local storage with the key <code>pokemon__url</code>. The name of each Pokémon will also be
+stored in local storage, with its key being <code>pokemon__</code> and then its number. For
+example, Bulbasaur is number 1, so will be saved as <code>pokemon__1</code> in local
+storage.</p>
+<p>When the Pokémon list page is initialised, we should load all the Pokémon we
+already have cached. We can do this by looping through all the Pokémon numbers
+starting from 1, until we don’t get a result from the cache:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">let</span> nextPokenumber = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> storedPokemon;
+
+<span class="hljs-keyword">while</span> ((storedPokemon = localStorage.getItem(PREFIX + nextPokenumber)) !== <span class="hljs-literal">null</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`got <span class="hljs-subst">${storedPokemon}</span> from local with key <span class="hljs-subst">${PREFIX + nextPokenumber}</span>`</span>);
+  appendPokemon(nextPokenumber, storedPokemon);
+  nextPokenumber++;
+}
+</code></pre>
+<p>If we don’t already have a URL cached at initialization, we ought to set it to
+the URL for the first page of results:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">if</span> (!localStorage.getItem(URL)) {
+  localStorage.setItem(URL, <span class="hljs-string">'https://pokeapi.co/api/v2/pokemon'</span>);
+}
+</code></pre>
+<p>Right, that’s it for getting the cached stuff when we initialise the app. Now to
+store it in the first place. <code>get</code> has to be modified to use local storage
+instead of the local <em>variables</em> we were using before:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">const</span> get = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-comment">// do the API call and get JSON response</span>
+  <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> fetch(localStorage.getItem(URL));
+  <span class="hljs-keyword">const</span> json = <span class="hljs-keyword">await</span> response.json();
+
+  <span class="hljs-keyword">const</span> newPokemon = json.results.map(e =&gt; e.name);
+
+  <span class="hljs-keyword">const</span> list = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#pokemon-list'</span>);
+  newPokemon.forEach((name, i) =&gt; {
+    appendPokemon(nextPokenumber, name);
+
+    <span class="hljs-keyword">const</span> key = PREFIX + nextPokenumber;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Storing <span class="hljs-subst">${name}</span> as <span class="hljs-subst">${key}</span>`</span>);
+    localStorage.setItem(key, name)
+    nextPokenumber++;
+  });
+
+  localStorage.setItem(URL, json.next);
+
+  <span class="hljs-comment">// hide the spinner when all the pages have been loaded</span>
+  <span class="hljs-keyword">if</span> (!localStorage.getItem(URL)) {
+    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#after-list'</span>).style.display = <span class="hljs-string">'none'</span>;
+  }
+};
+</code></pre>
+<a class="header-link" href="#adding-a-button-to-clear-local-storage"><h5 id="adding-a-button-to-clear-local-storage"><span>Adding a button to clear local storage</span></h5></a><p>While we’re testing the local storage functionality, it’s going to be useful to
+be able to clear local storage manually. This is because the app will assume
+that all the data we’ve already stored in local storage has been stored
+correctly, but mere mortals are unlikely to get the code right first time. Or
+even if you’re just playing about with the code it will be handy. So we should
+add a button to the side menu. Add this to the list in <code>index.html</code>:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-list-item</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"clearLocalStorage()"</span>&gt;</span>
+  Clear local storage
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-list-item</span>&gt;</span>
+</code></pre>
+<p>And then add the associated function in the <code>&lt;script&gt;</code> tag of <code>index.html</code>:</p>
+<pre><code class="lang-javascript hljs"><span class="hljs-keyword">const</span> clearLocalStorage = () =&gt; {
+  localStorage.clear();
+  ons.notification.alert(<span class="hljs-string">'Cleared local storage'</span>);
+};
+</code></pre>
+<a class="header-link" href="#full-less-than-code-greater-than-pokemon-html-less-than-code-greater-than-javascript-listing"><h5 id="full-less-than-code-greater-than-pokemon-html-less-than-code-greater-than-javascript-listing"><span>Full <code>pokemon.html</code> JavaScript listing</span></h5></a><p>As promised, here is the full JavaScript listing for <code>pokemon.html</code>. The
+contents of <code>pokemon.html</code> should exactly match this, so
+copy and paste it in now:</p>
+<pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ons-page</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pokemon"</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> savePokemon = (pokenumber, button) =&gt; {
+      addPokemonToGrid(pokenumber);
+      button.parentNode.parentNode.hideExpansion();
+    };
+
+    <span class="hljs-keyword">const</span> appendPokemon = (pokenumber, name) =&gt; {
+      <span class="hljs-keyword">const</span> list = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#pokemon-list'</span>);
+      list.appendChild(ons.createElement(<span class="hljs-string">`
+        &lt;ons-list-item expandable&gt;
+          <span class="hljs-subst">${pokenumber}</span> <span class="hljs-subst">${name}</span>
+          &lt;div class="expandable-content"&gt;
+            &lt;ons-button onclick="savePokemon(<span class="hljs-subst">${pokenumber}</span>, this)"&gt;Save&lt;/ons-button&gt;
+          &lt;/div&gt;
+        &lt;/ons-list-item&gt;
+      `</span>));
+    }
+
+    <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'init'</span>, ({ target }) =&gt; {
+      <span class="hljs-keyword">if</span> (target.matches(<span class="hljs-string">'#pokemon'</span>)) {
+        <span class="hljs-comment">// local storage keys</span>
+        <span class="hljs-keyword">const</span> URL = <span class="hljs-string">'pokemon__url'</span>;
+        <span class="hljs-keyword">const</span> PREFIX = <span class="hljs-string">'pokemon__'</span>;
+
+        <span class="hljs-keyword">let</span> nextPokenumber = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">let</span> storedPokemon;
+
+        <span class="hljs-keyword">while</span> ((storedPokemon = localStorage.getItem(PREFIX + nextPokenumber)) !== <span class="hljs-literal">null</span>) {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`got <span class="hljs-subst">${storedPokemon}</span> from local with key <span class="hljs-subst">${PREFIX + nextPokenumber}</span>`</span>);
+          appendPokemon(nextPokenumber, storedPokemon);
+          nextPokenumber++;
+        }
+
+        <span class="hljs-keyword">if</span> (!localStorage.getItem(URL)) {
+          localStorage.setItem(URL, <span class="hljs-string">'https://pokeapi.co/api/v2/pokemon'</span>);
+        }
+
+        <span class="hljs-keyword">const</span> get = <span class="hljs-keyword">async</span> () =&gt; {
+          <span class="hljs-comment">// do the API call and get JSON response</span>
+          <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> fetch(localStorage.getItem(URL));
+          <span class="hljs-keyword">const</span> json = <span class="hljs-keyword">await</span> response.json();
+
+          <span class="hljs-keyword">const</span> newPokemon = json.results.map(e =&gt; e.name);
+
+          <span class="hljs-keyword">const</span> list = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#pokemon-list'</span>);
+          newPokemon.forEach((name, i) =&gt; {
+            appendPokemon(nextPokenumber, name);
+
+            <span class="hljs-keyword">const</span> key = PREFIX + nextPokenumber;
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Storing <span class="hljs-subst">${name}</span> as <span class="hljs-subst">${key}</span>`</span>);
+            localStorage.setItem(key, name)
+            nextPokenumber++;
+          });
+
+          localStorage.setItem(URL, json.next);
+
+          <span class="hljs-comment">// hide the spinner when all the pages have been loaded</span>
+          <span class="hljs-keyword">if</span> (!localStorage.getItem(URL)) {
+            <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#after-list'</span>).style.display = <span class="hljs-string">'none'</span>;
+          }
+        };
+
+        <span class="hljs-comment">// get the first set of results as soon as the page is initialised</span>
+        get();
+
+        <span class="hljs-comment">// at the bottom of the list get the next set of results and append them</span>
+        target.onInfiniteScroll = (done) =&gt; {
+          <span class="hljs-keyword">if</span> (localStorage.getItem(URL)) {
+            setTimeout(() =&gt; {
+              get();
+              done();
+            }, <span class="hljs-number">200</span>);
+          }
+        };
+      }
+    });
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ons-list</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pokemon-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ons-list</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"after-list"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin: 20px; text-align: center;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ons-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"fa-spinner"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"26px"</span> <span class="hljs-attr">spin</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ons-icon</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">ons-page</span>&gt;</span>
+</code></pre>
+<p>Run the app now (maybe clear local storage first with the side menu button, and
+also clear the app log if you’re using Monaca Debugger). You’ll see that there
+are no results in local storage so the API will be called. You can verify this
+by checking the app log or console, and seeing the messages saying that “X
+Pokémon has been stored” etc. Then restart the app, and this time see from the
+log (and faster loading times) that cached Pokémon are loaded from local
+storage, not from PokeAPI.</p>
+
+
+      
+
+<hr>
+<div class="guide-links">
+
+
+<span>← <a href="https://onsen.io/v2/guide/fundamentals.html">Fundamentals (Onsen UI 101)</a></span>
+
+
+
+<span style="float: right"><a href="https://onsen.io/v2/guide/deploy.html">Deploying Your App</a> →</span>
+
+
+</div>
+
+      
+    </div>
+  </div>
+  
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-526750-29', 'onsen.io');
+ga('require', 'GTM-NN2LBGS');
+ga('send', 'pageview');
+</script>
+
+<script async="" defer="defer" src="Tutorial%20-%20Onsen%20UI_files/buttons.js"></script>
+
+
+  <div class="prompt prompt-bottom prompt-newsletter newsletter-signup prompt-hidden" id="popup-newsletter">
+  <i class="fa fa-times prompt-button-close"></i>
+  <h2>Stay up to date!</h2>
+  <p style="font-size:15px; margin: 5px;" align="center">Get updates on Onsen UI, Monaca and hybrid app development. No more than 2-3 times a month.</p>
+  <br>
+  <form>
+    <input id="input-email" class="input-email-popup-newsletter" type="email" placeholder="Enter your email address" name="email" required="">
+    <input id="button-submit" type="submit" value="Subscribe">
+  </form>
+  <div class="newsletter-thankyou newsletter-signup-thankyou">Thanks for subscribing!</div>
+</div>
+
+  <script defer="defer" src="Tutorial%20-%20Onsen%20UI_files/jquery_002.js"></script>
+  <script defer="defer" src="Tutorial%20-%20Onsen%20UI_files/hjson.js"></script>
+  <script defer="defer" src="Tutorial%20-%20Onsen%20UI_files/vue.js"></script>
+  <script defer="defer" src="Tutorial%20-%20Onsen%20UI_files/default.js"></script>
+  
+    <script defer="defer" src="Tutorial%20-%20Onsen%20UI_files/side-menu-highlight.js"></script>
+  
+  <script defer="defer" src="Tutorial%20-%20Onsen%20UI_files/recent_activities.js"></script>
+  <script src="Tutorial%20-%20Onsen%20UI_files/highlight.js"></script>
+  <script src="Tutorial%20-%20Onsen%20UI_files/moment.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script type="text/javascript" src="Tutorial%20-%20Onsen%20UI_files/docsearch.js"></script>
+  <script type="text/javascript"> docsearch({
+  apiKey: '898f1776da86432b7aa2ffa3632ba17e',
+  indexName: 'onsen',
+  inputSelector: '#docsearch',
+  queryHook: function (query) {
+    return ' ' + query;
+  },
+  debug: false // Set debug to true if you want to inspect the dropdown
+  });
+  </script>
+
+ 
+ 
+<iframe style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;" name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="Tutorial%20-%20Onsen%20UI_files/box-5e3cec51ed8e99df6977c199d27812d7.html"></iframe></body></html>
