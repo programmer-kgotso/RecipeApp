@@ -23,12 +23,12 @@
             if (document.getElementById("darkModeEnabledSwitch").checked == true) {
                 window.localStorage.setItem("darkModeEnabledSwitch", "true");
                 document.querySelector('#theme').setAttribute('href',
-                    'assets/onsenui/css/dark-onsen-css-components.css');
+                    'www/assets/onsenui/css/dark-onsen-css-components.css');
             }
             else if (document.getElementById("darkModeEnabledSwitch").checked == false) {
                 window.localStorage.setItem("darkModeEnabledSwitch", "false");
                 document.querySelector('#theme').setAttribute('href',
-                    'assets/onsenui/css/onsen-css-components.min.css');
+                    '/assets/onsenui/css/onsen-css-components.min.css');
             }
         }
     </script>

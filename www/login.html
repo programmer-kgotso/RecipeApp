@@ -25,6 +25,7 @@
                 // call the navigator to move to the new page
                 const navigator = document.querySelector('#navigator');
                 navigator.resetToPage('home.html');
+                ons.notification.toast = "successfully login";
             } else {
                 ons.notification.alert('Wrong username/password combination');
             }
