@@ -25,7 +25,10 @@
                 // call the navigator to move to the new page
                 const navigator = document.querySelector('#navigator');
                 navigator.resetToPage('home.html');
-                ons.notification.toast = "successfully login";
+
+                ons.notification.toast("login sucessful!", {
+                    timeout: 2000,
+                });
             } else {
                 ons.notification.alert('Wrong username/password combination');
             }
@@ -50,6 +53,9 @@
                 <ons-button onclick="login()" style="width: 50%; font-size: 22px; background-color: #002d56;">
                     Sign
                     in</ons-button>
+            </p>
+            <p onclick="loadPage('register.html')">Dont have an account.Register Here!
+
             </p>
         </div>
     </ons-card>
