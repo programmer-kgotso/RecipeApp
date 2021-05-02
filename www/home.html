@@ -1,4 +1,230 @@
 <ons-page id="home">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer>
+
+        const mealsEl = document.getElementById("meals");
+        const favoriteContainer = document.getElementById("fav-meals");
+        const mealPopup = document.getElementById("meal-popup");
+        const mealInfoEl = document.getElementById("meal-info");
+        const popupCloseBtn = document.getElementById("close-popup");
+
+        const searchTerm = document.getElementById("search-term");
+        const searchBtn = document.getElementById("search");
+
+        getRandomMeal();
+        fetchFavMeals();
+
+        async function getRandomMeal() {
+            const resp = await fetch(
+                "https://www.themealdb.com/api/json/v1/1/random.php"
+            );
+            const respData = await resp.json();
+            const randomMeal = respData.meals[0];
+
+            addMeal(randomMeal, true);
+        }
+
+        async function getMealById(id) {
+            const resp = await fetch(
+                "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
+            );
+
+            const respData = await resp.json();
+            const meal = respData.meals[0];
+
+            return meal;
+        }
+
+        async function getMealsBySearch(term) {
+            const resp = await fetch(
+                "https://www.themealdb.com/api/json/v1/1/search.php?s=" + term
+            );
+
+            const respData = await resp.json();
+            const meals = respData.meals;
+
+            return meals;
+        }
+
+        function addMeal(mealData, random = false) {
+            console.log(mealData);
+
+            const meal = document.createElement("div");
+            meal.classList.add("meal");
+
+            meal.innerHTML = `
+        <div class="meal-header">
+            ${random
+                    ? `
+            <span class="random"> Random Recipe </span>`
+                    : ""
+                }
+            <img
+                src="${mealData.strMealThumb}"
+                alt="${mealData.strMeal}"
+            />
+        </div>
+        <div class="meal-body">
+            <h4>${mealData.strMeal}</h4>
+            <button class="fav-btn">
+                <i class="fas fa-heart"></i>
+            </button>
+        </div>
+    `;
+
+            const btn = meal.querySelector(".meal-body .fav-btn");
+
+            btn.addEventListener("click", () => {
+                if (btn.classList.contains("active")) {
+                    removeMealLS(mealData.idMeal);
+                    btn.classList.remove("active");
+                } else {
+                    addMealLS(mealData.idMeal);
+                    btn.classList.add("active");
+                }
+
+                fetchFavMeals();
+            });
+
+            meal.addEventListener("click", () => {
+                showMealInfo(mealData);
+
+            });
+
+            mealsEl.appendChild(meal);
+        }
+
+        function addMealLS(mealId) {
+            const mealIds = getMealsLS();
+
+            localStorage.setItem("mealIds", JSON.stringify([...mealIds, mealId]));
+        }
+
+        function removeMealLS(mealId) {
+            const mealIds = getMealsLS();
+
+            localStorage.setItem(
+                "mealIds",
+                JSON.stringify(mealIds.filter((id) => id !== mealId))
+            );
+        }
+
+        function getMealsLS() {
+            const mealIds = JSON.parse(localStorage.getItem("mealIds"));
+
+            return mealIds === null ? [] : mealIds;
+        }
+
+        async function fetchFavMeals() {
+            // clean the container
+            favoriteContainer.innerHTML = "";
+
+            const mealIds = getMealsLS();
+
+            for (let i = 0; i < mealIds.length; i++) {
+                const mealId = mealIds[i];
+                meal = await getMealById(mealId);
+
+                addMealFav(meal);
+            }
+        }
+
+        function addMealFav(mealData) {
+            const favMeal = document.createElement("li");
+
+            favMeal.innerHTML = `
+        <img
+            src="${mealData.strMealThumb}"
+            alt="${mealData.strMeal}"
+        /><span>${mealData.strMeal}</span>
+        <button class="clear"><i class="fas fa-window-close"></i></button>
+        
+    `;
+
+            const btn = favMeal.querySelector(".clear");
+
+            btn.addEventListener("click", () => {
+                removeMealLS(mealData.idMeal);
+
+                fetchFavMeals();
+            });
+
+            favMeal.addEventListener("click", () => {
+                showMealInfo(mealData);
+            });
+
+            favoriteContainer.appendChild(favMeal);
+        }
+
+        function showMealInfo(mealData) {
+            // clean it up
+            mealInfoEl.innerHTML = "";
+
+            // update the Meal info
+            const mealEl = document.createElement("div");
+
+            const ingredients = [];
+
+            // get ingredients and measures
+            for (let i = 1; i <= 20; i++) {
+                if (mealData["strIngredient" + i]) {
+                    ingredients.push(
+                        `${mealData["strIngredient" + i]} - ${mealData["strMeasure" + i]
+                        }`
+                    );
+                } else {
+                    break;
+                }
+            }
+
+            mealEl.innerHTML = `
+        <h1>${mealData.strMeal}</h1>
+        <img
+            src="${mealData.strMealThumb}"
+            alt="${mealData.strMeal}"
+        />
+        <p>
+        ${mealData.strInstructions}
+        </p>
+        <h3>Ingredients:</h3>
+        <ul>
+            ${ingredients
+                    .map(
+                        (ing) => `
+            <li>${ing}</li>
+            `
+                    )
+                    .join("")}
+        </ul>
+    `;
+
+            mealInfoEl.appendChild(mealEl);
+
+            // show the popup
+            mealPopup.classList.remove("hidden");
+        }
+
+        searchBtn.addEventListener("click", async () => {
+            // clean container
+            mealsEl.innerHTML = "";
+
+            const search = searchTerm.value;
+            const meals = await getMealsBySearch(search);
+
+            if (meals) {
+                meals.forEach((meal) => {
+                    addMeal(meal);
+                });
+            }
+        });
+
+        popupCloseBtn.addEventListener("click", () => {
+            mealPopup.classList.add("hidden");
+        });
+
+
+    </script>
 
     <ons-toolbar id="home-toolbar">
         <div class="center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;">Recipe App
@@ -9,64 +235,42 @@
             </ons-toolbar-button>
         </div>
         <div class="right" style="width: 2px;">
-            <ons-icon icon="md-home"></ons-icon>
+            <ons-icon icon="md-home" onclick=""></ons-icon>
             <ons-toolbar-button>-</ons-toolbar-button>
             <ons-toolbar-button>+</ons-toolbar-button>
         </div>
     </ons-toolbar>
 
+
     <script>
         const openMenu = () => {
             document.querySelector('#menu').open();
         };
+
+
     </script>
+    <ons-card>
+        <!-----  <div class="mobile-container"> !--->
+        <header>
+            <input type="text" id="search-term" />
+            <button id="search"><i class="fas fa-search"></i></button>
+        </header>
+        <div class="fav-container">
+            <h3>Favorite Meals</h3>
+            <ul class="fav-meals" id="fav-meals"></ul>
+        </div>
+        <div class="meals" id="meals"></div>
+        </div>
+    </ons-card>
 
-    <div style="height: 200px; padding: 1px 0 0 0;">
-        <div class="card">
-            <ons-list-item>
-                <div class="left">
-                    <img class="list-item__thumbnail" src="assets/img/logo.png"
-                        onclick="ons.notification.alert('some more details on our recipe !!')">
-                </div>
-                <div class="center">
-                    <span class="list-item__title">Pizza Recipe</span><span class="list-item__subtitle">On the
-                        Italian: [ˈpittsa], Neapolitan: [ˈpittsə]) is a savory dish of Italian
-                        origin, consisting of a usually round, flattened base of leavened wheat-based dough
-                        topped with tomatoes, cheese, and often various other ingredients (anchovies,
-                        olives, meat, etc.) baked at a high temperature,
-                        Internet</span>
-                </div>
-            </ons-list-item>
 
-            <ons-list-item>
-                <div class="left">
-                    <img class="list-item__thumbnail" src="assets/img/logo.png"
-                        onclick="ons.notification.alert('some more details on our recipe !!')">
-                </div>
-                <div class="center">
-                    <span class="list-item__title">Cake Recipe</span><span class="list-item__subtitle">On the
-                        Italian: [ˈpittsa], Neapolitan: [ˈpittsə]) is a savory dish of Italian
-                        origin, consisting of a usually round, flattened base of leavened wheat-based dough
-                        topped with tomatoes, cheese, and often various other ingredients (anchovies,
-                        olives, meat, etc.) baked at a high temperature,
-                        Internet</span>
-                </div>
-            </ons-list-item>
+    <div class="popup-container hidden" id="meal-popup">
 
-            <ons-list-item>
-                <div class="left">
-                    <img class="list-item__thumbnail" src="assets/img/logo.png"
-                        onclick="ons.notification.alert('some more details on our recipe !!')">
-                </div>
-                <div class="center">
-                    <span class="list-item__title">Cheese Recipe</span><span class="list-item__subtitle">On the
-                        Italian: [ˈpittsa], Neapolitan: [ˈpittsə]) is a savory dish of Italian
-                        origin, consisting of a usually round, flattened base of leavened wheat-based dough
-                        topped with tomatoes, cheese, and often various other ingredients (anchovies,
-                        olives, meat, etc.) baked at a high temperature,
-                        Internet</span>
-                </div>
-
+        <div class="popup">
+            <button id="close-popup" class="close-popup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="meal-info" id="meal-info"></div>
         </div>
 
     </div>
