@@ -18,19 +18,37 @@
         </ons-list-item>
     </ons-list>
     <script>
+        document.addEventListener('init'
+            , function (event) {
+                var page = event.target;
+                if (window.localStorage.getItem("darkModeEnabledSwitch") == "true") {
+                    document.getElementById("darkModeEnabledSwitch").checked = true;
+                }
+                else {
+                    document.getElementById("darkModeEnabledSwitch").checked = false;
+                };
 
-        document.getElementById("darkModeEnabledSwitch").onclick = function () {
-            if (document.getElementById("darkModeEnabledSwitch").checked == true) {
-                window.localStorage.setItem("darkModeEnabledSwitch", "true");
-                document.querySelector('#theme').setAttribute('href',
-                    'www/assets/onsenui/css/dark-onsen-css-components.css');
-            }
-            else if (document.getElementById("darkModeEnabledSwitch").checked == false) {
-                window.localStorage.setItem("darkModeEnabledSwitch", "false");
-                document.querySelector('#theme').setAttribute('href',
-                    '/assets/onsenui/css/onsen-css-components.min.css');
-            }
-        }
+                document.getElementById("darkModeEnabledSwitch").onclick = function () {
+                    if (document.getElementById("darkModeEnabledSwitch").checked == true) {
+                        window.localStorage.setItem("darkModeEnabledSwitch"
+                            ,
+                            "true");
+                        document.querySelector('#theme').setAttribute('href',
+                            'www/assets/onsenui/css/dark-onsen-css-components.css');
+                    }
+
+                    else if (document.getElementById("darkModeEnabledSwitch").checked ==
+                        false) {
+                        window.localStorage.setItem("darkModeEnabledSwitch"
+                            ,
+                            "false");
+                        document.querySelector('#theme').setAttribute('href'
+                            ,
+                            'www/assets/onsenui/css/onsen-css-components.min.css');
+                    }
+                }
+            });
+
     </script>
 
 </ons-page>
