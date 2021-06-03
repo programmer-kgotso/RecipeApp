@@ -8,25 +8,10 @@
     </ons-toolbar>
     <ons-progress-bar indeterminate></ons-progress-bar>
 
-    <!--<script>
-        var convert = function () {
-            var tempCel = document.getElementById('weight').value;
-            var tempFar = (tempCel * 9 / 5) + 32;
-            //ons.notification.alert("That is " + tempFar + "g to lb/oz");
-
-            //get value of switch 'switch-roundup'
-            var roundUpSwitchChecked = document.getElementById('switch-roundup').checked;
-            if (roundUpSwitchChecked) {
-                ons.notification.alert("That is " + Math.round(tempFar) + "g to lb/oz");
-            } else {
-                ons.notification.alert("That is " + tempFar + "g to lb/oz");
-            }
-
-        };
-    </script>!-->
+   
     <ons-card>
         <div style="text-align: center; "
-            style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+            style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color: blue; border-radius: 0 0 ;">
             <p>Type a value in the grams field to convert the value to Pounds and Ounce:</p>
 
             <p>
@@ -43,14 +28,6 @@
         }
 
     </script>
-
-    <!--<div style="text-align: center; margin-top: 30px;">
-        <p>
-            <ons-input id="weight" type="number" modifier="underbar" placeholder="Enter Weight" float></ons-input>
-        </p>
-        <p style="margin-top: 30px;">
-            <ons-button onclick="convert()">Convert</ons-button>
-        </p>!-->
 
     <ons-list>
         <ons-list-header>Settings</ons-list-header>
